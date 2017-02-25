@@ -1,0 +1,34 @@
+# depslib dependency file v1.0
+1488065044 source:d:\programmation\projects\minotaure\jeu.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	"jeu.h"
+	"menu.h"
+
+1488065044 source:d:\programmation\projects\minotaure\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	"jeu.h"
+	"menu.h"
+	"Affichage.h"
+
+1488055633 d:\programmation\projects\minotaure\jeu.h
+	<time.h>
+
+1488065044 d:\programmation\projects\minotaure\menu.h
+
+1488065044 source:d:\programmation\projects\minotaure\affichage.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	"Affichage.h"
+
+1488060122 d:\programmation\projects\minotaure\affichage.h
+	<stdlib.h>
+	<stdio.h>
+	<windows.h>
+
+1488055691 d:\programmation\projects\minotaure\affichage.c
+
