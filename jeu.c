@@ -34,19 +34,17 @@ int choixMenu()
     switch(choix)
     {
         case 'i':
-        return 'i';
         break;
 
         case 'n':
-        return 'n';
         break;
 
         case 'o':
-        return 'o';
         break;
 
         case 27:
         return 0;
         break;
     }
+    return choix;
 }
