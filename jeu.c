@@ -31,19 +31,22 @@ int choixMenu()
     {
     choix = getch();
     }
-    if (choix == 'i')
-    puts("HELLO");
-    return choix;
+    switch(choix)
+    {
+        case 'i':
+        return 'i';
+        break;
 
-    if (choix == 'n')
-    puts("GAME");
-    return choix;
+        case 'n':
+        return 'n';
+        break;
 
-    if (choix == 'o')
-    puts("OPTION");
-    return choix;
+        case 'o':
+        return 'o';
+        break;
 
-    if (choix == 27)
-    puts("BYE BYE");
-    return 0;
+        case 27:
+        return 0;
+        break;
+    }
 }

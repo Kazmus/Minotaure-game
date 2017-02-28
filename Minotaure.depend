@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1488065044 source:d:\programmation\projects\minotaure\jeu.c
+1488276212 source:d:\programmation\projects\minotaure\jeu.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
