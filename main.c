@@ -38,7 +38,7 @@ int main()
 
     if (choix == 'n')       // si choix => n
     {
-        int x,y;            // on declare un entier x et y
+        int x,y,round = 0;            // on declare un entier x et y
         char touche;        // on declare un char touche
 
         effaceEcran();              // on efface l'ecran
@@ -58,6 +58,7 @@ int main()
                     FixePosCurseur(x,y);    // on fait y - 1 a chaque fois qu'on appuye sur z
                     printf(" ");
                     y--;
+
                 }
                 if(touche == 's')
                 {
@@ -81,7 +82,13 @@ int main()
 
                 FixePosCurseur(x,y);        // pour chaque deplacement l'initiale du heros ce deplace egalement vers la direction qu'on a appuyer
                 printf("T");
+                if(x == 11 && y == 11)
+                {
+                round++;
+                afficheScore(round);
+                }
             }
+
         /// Ici faudra rajouter : gestion du score, du déplacement du minotaure, de la rencontre Thésée et Ariane ou Thésée et le Minotaure (après déplacement de Thésée ou du minotaure)
         }
 

@@ -48,3 +48,18 @@ int choixMenu()
     }
     return choix;
 }
+
+int score(int round)
+{
+    round++;
+    return round;
+}
+
+void afficheScore(int round)
+{
+    if(round == 3)
+    {
+        effaceEcran();
+        printf("GAME OVER");
+    }
+}

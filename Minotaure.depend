@@ -32,3 +32,34 @@
 
 1488055691 d:\programmation\projects\minotaure\affichage.c
 
+1488456856 source:d:\projets\minotaure-game\affichage.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	"Affichage.h"
+
+1488456856 d:\projets\minotaure-game\affichage.h
+	<stdlib.h>
+	<stdio.h>
+	<windows.h>
+
+1488463272 source:d:\projets\minotaure-game\jeu.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	"jeu.h"
+	"menu.h"
+
+1488456856 d:\projets\minotaure-game\jeu.h
+	<time.h>
+
+1488456856 d:\projets\minotaure-game\menu.h
+
+1488463269 source:d:\projets\minotaure-game\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	"jeu.h"
+	"menu.h"
+	"Affichage.h"
+
