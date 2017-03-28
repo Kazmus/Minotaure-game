@@ -39,9 +39,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="jeu.h" />
-		<Unit filename="labyrinthes.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="labyrinthes.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
