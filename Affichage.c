@@ -124,13 +124,15 @@ void affichelaby(int x,int y)
     {
         for (x=0;x<=largeurLaby;x++)
         {
+
             if (laby1[x][y] == 0)
             printf(" ");
             if (laby1[x][y] == 1)
             printf("%c", mur);
         }
-        printf("\n");
+            printf("\n");
     }
+
 }
 
 

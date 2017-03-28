@@ -37,22 +37,19 @@ int main()
 
     if (choix == 'n')       // si choix => n
     {
-        int i,x,y;            // on declare un entier x et y
+        int i,x = 9,y;            // on declare un entier x et y
         char touche;        // on declare un char touche
 
-        effaceEcran();              // on efface l'ecran
+
+        effaceEcran();               // on efface l'ecran
         FixePosCurseur(0,0);
-        affichelaby(x,y); // affichage labyrinthe
-        FixePosCurseur(0,25);        // on fixe le curseur tout en haut a gauche de la console
+        affichelaby(x,y);             // affichage labyrinthe
+        FixePosCurseur(0,22);        // on fixe le curseur tout en haut a gauche de la console
         printf("Utilisez les touches z pour monter, s pour descendre,\n q pour aller à gauche, d pour aller à droite et Esc pour quitter\n\n\n"); //C'est ecrit dessus ce que ca veut dire
-
-
-
-        x=10;y=10; // x => 10 et y => 10 temporaire A MODIFIER PAR LA SUITE UNE FOIS LE LABYRINTHE MIS
-
+        x=10;y=10;                  // x => 10 et y => 10 temporaire A MODIFIER PAR LA SUITE UNE FOIS LE LABYRINTHE MIS
         FixePosCurseur(x,y);        // on fixe le cusreur avec les valeurs qu'on a mis dans la ligne precedente
-
         printf("T");                // on affiche la 1ere lettre de notre heros sur la position du curseur
+
 
         while(1)                       // tant que 1
         {
