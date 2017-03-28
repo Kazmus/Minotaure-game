@@ -11,8 +11,9 @@ void attendre(unsigned int secs)
     while (time(0) < retTime);               // boucle jusque obtenir le temps
 }
 
-// AFFICHAGE DU MENU
-void afficheMenu()
+
+// RENVOI UN CHOIX DU MENU
+int choixMenu()
 {
     puts("===========================\n");
     puts(" |  (I) INTRODUCTION       |\n");
@@ -20,11 +21,7 @@ void afficheMenu()
     puts(" |  (O) OPTIONS            |\n");
     puts(" |  (Esc) QUITTER LE JEU   |\n");
     puts(" ===========================\n\n");
-}
 
-// RENVOI UN CHOIX DU MENU
-int choixMenu()
-{
     int choix;
 
     while (choix != 'i' && choix != 'n' && choix != 'o' && choix != 27)
@@ -48,6 +45,8 @@ int choixMenu()
     }
     return choix;
 }
+
+
 
 int score(int round)
 {

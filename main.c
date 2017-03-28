@@ -5,6 +5,7 @@
 #include "menu.h"
 #include "Affichage.h"
 
+
 int main()
 {
     int choix;
@@ -14,7 +15,6 @@ int main()
 
 
         effaceEcran();      // efface l'ecran
-        afficheMenu(1);         // on fait appel a la procedure qui affiche le menu
         choix = choixMenu();    // on fait appel a la fonction qui renvoi le choix du menu
 
         if (choix == 'i')       // si choix => i
@@ -26,7 +26,6 @@ int main()
             if (choix == 13)            // si choix => enter
             {
                 effaceEcran();          // efface l'ecran
-                afficheMenu(1);         // on fait appel a la procedure qui affiche le menu
                 choix = choixMenu();    // on fait appel a la fonction qui renvoi le choix du menu
             }
         }
@@ -38,14 +37,21 @@ int main()
 
     if (choix == 'n')       // si choix => n
     {
-        int x,y,round = 0;            // on declare un entier x et y
+        int i,x,y;            // on declare un entier x et y
         char touche;        // on declare un char touche
 
         effaceEcran();              // on efface l'ecran
-        FixePosCurseur(1,1);        // on fixe le cusreur tout en haut a gauche de la console
-        printf("Utilisez les touches z pour monter, s pour descendre,\n q pour aller à gauche, d pour aller à droite et Esc pour quitter"); //C'est ecrit dessus ce que ca veut dire
-        x=10;y=10;                  // x => 10 et y => 10 temporaire A MODIFIER PAR LA SUITE UNE FOIS LE LABYRINTHE MIS
+        FixePosCurseur(0,0);
+        affichelaby(x,y); // affichage labyrinthe
+        FixePosCurseur(0,25);        // on fixe le curseur tout en haut a gauche de la console
+        printf("Utilisez les touches z pour monter, s pour descendre,\n q pour aller à gauche, d pour aller à droite et Esc pour quitter\n\n\n"); //C'est ecrit dessus ce que ca veut dire
+
+
+
+        x=10;y=10; // x => 10 et y => 10 temporaire A MODIFIER PAR LA SUITE UNE FOIS LE LABYRINTHE MIS
+
         FixePosCurseur(x,y);        // on fixe le cusreur avec les valeurs qu'on a mis dans la ligne precedente
+
         printf("T");                // on affiche la 1ere lettre de notre heros sur la position du curseur
 
         while(1)                       // tant que 1
@@ -55,42 +61,66 @@ int main()
                 touche=getch();             // touche => touche qu'on appuye sans passer par enter
                 if(touche == 'z')           // si touche => z
                 {
+                    y--;
+                    i = collision(x,y);
+                    y++;
+                    if(i == 0)
+                    {
                     FixePosCurseur(x,y);    // on fait y - 1 a chaque fois qu'on appuye sur z
                     printf(" ");
                     y--;
-
+                    }
                 }
                 if(touche == 's')
                 {
+                    y++;
+                    i = collision(x,y);
+                    y--;
+                    if(i == 0)
+                    {
                     FixePosCurseur(x,y);    // on fait y + 1 a chaque fois qu'on appuye sur z
                     printf(" ");
                     y++;
+                    }
                 }
                 if(touche == 'q')
                 {
+                    x--;
+                    i = collision(x,y);
+                    x++;
+                    if(i == 0)
+                    {
                     FixePosCurseur(x,y);    // on fait x - 1 a chaque fois qu'on appuye sur z
                     printf(" ");
                     x--;
+                    }
                 }
                 if(touche == 'd')
                 {
+                    x++;
+                    i = collision(x,y);
+                    x--;
+                    if(i == 0)
+                    {
                     FixePosCurseur(x,y);    // on fait x + 1 a chaque fois qu'on appuye sur z
                     printf(" ");
                     x++;
+                    }
                 }
-                if(touche == 27) break;     // si on appuye sur Esc on casse et quitte
+
+
+                if(touche == 27)
+                break;     // si on appuye sur Esc on casse et quitte
 
                 FixePosCurseur(x,y);        // pour chaque deplacement l'initiale du heros ce deplace egalement vers la direction qu'on a appuyer
                 printf("T");
-                if(x == 11 && y == 11)
-                {
-                round++;
-                afficheScore(round);
-                }
+
+
             }
+        }
 
         /// Ici faudra rajouter : gestion du score, du déplacement du minotaure, de la rencontre Thésée et Ariane ou Thésée et le Minotaure (après déplacement de Thésée ou du minotaure)
-        }
+
 
 
     }

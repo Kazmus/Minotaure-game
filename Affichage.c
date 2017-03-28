@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <conio.h>
 #include "Affichage.h"
+#include "labyrinthes.h"
 
 
 //=====================================================================//
@@ -99,4 +100,37 @@ void effaceEcran()
 
 
 }
+
+int collision(int x,int y)
+{
+    int obstacle;
+
+    if (laby1[x][y] == 0)
+    {
+        obstacle = 0;
+    }
+    if (laby1[x][y] == 1)
+    {
+        obstacle = 1;
+    }
+    return obstacle;
+}
+
+void affichelaby(int x,int y)
+{
+    char mur = 219;
+
+    for (y=0;y<=hauteurLaby;y++)
+    {
+        for (x=0;x<=largeurLaby;x++)
+        {
+            if (laby1[x][y] == 0)
+            printf(" ");
+            if (laby1[x][y] == 1)
+            printf("%c", mur);
+        }
+        printf("\n");
+    }
+}
+
 

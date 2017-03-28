@@ -77,3 +77,6 @@ void Couleur(int CouleurCaractere, int CouleurFond);
 void effaceEcran();
 
 //=========================================================================//
+
+void affichelaby(int x, int y);
+int collision(int x,int y);
