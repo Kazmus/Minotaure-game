@@ -135,4 +135,10 @@ void affichelaby(int x,int y)
 
 }
 
+void gameOver()
+{
+    effaceEcran();
+    FixePosCurseur(25,12);
+    printf("GAME OVER");
+}
 

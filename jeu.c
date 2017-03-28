@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <conio.h>
 #include "jeu.h"
 #include "menu.h"
 
@@ -48,17 +45,3 @@ int choixMenu()
 
 
 
-int score(int round)
-{
-    round++;
-    return round;
-}
-
-void afficheScore(int round)
-{
-    if(round == 3)
-    {
-        effaceEcran();
-        printf("GAME OVER");
-    }
-}
