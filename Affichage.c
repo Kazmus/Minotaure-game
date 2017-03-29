@@ -101,6 +101,47 @@ void effaceEcran()
 
 }
 
+int selection()
+{
+    char choixDefilement;
+    int defilement = 1,choix;
+    FixePosCurseur(0,22);
+    puts("Veuillez choisir un labyrinthe deplacer les laby avec Q et D ensuite sur ESPACE pour valider le choix");
+
+    while (defilement <= 10 && defilement >= 1)
+    {
+        while (choixDefilement != 'q' || choixDefilement != 'd')
+        {
+            choixDefilement = getch();
+            if (choixDefilement == 'q')
+            {
+                if (defilement == 1)
+                {
+                    break;
+                }
+                defilement--;
+                printf("%d ", defilement);
+            }
+            if (choixDefilement == 'd')
+            {
+                if (defilement == 10)
+                {
+                    break;
+                }
+                defilement++;
+                printf("%d ", defilement);
+            }
+            if (choixDefilement == 32)
+            {
+                choix = defilement;
+                effaceEcran();
+                FixePosCurseur(0,0);
+                return choix;
+            }
+        }
+    }
+}
+
 int collision(int x,int y)
 {
     int obstacle;
@@ -116,17 +157,118 @@ int collision(int x,int y)
     return obstacle;
 }
 
-void affichelaby(int x,int y)
+void affichelaby(int choix)
 {
+    int x,y,laby[hauteurLaby][largeurLaby];
     char mur = 219;
 
-    for (y=0;y<=hauteurLaby;y++)
+    if (choix == 1)
     {
-        for (x=0;x<=largeurLaby;x++)
+        for (y=0;y<=20;y++)
         {
-            if (laby1[x][y] == 0)
+            for (x=0;x<=19;x++)
+            {
+                laby[x][y] = laby1[x][y];
+            }
+        }
+    }
+    if (choix == 2)
+    {
+        for (y=0;y<=20;y++)
+        {
+            for (x=0;x<=19;x++)
+            {
+                laby[x][y] = laby2[x][y];
+            }
+        }
+    }
+    if (choix == 3)
+    {
+        for (y=0;y<=20;y++)
+        {
+            for (x=0;x<=19;x++)
+            {
+                laby[x][y] = laby3[x][y];
+            }
+        }
+    }
+    if (choix == 4)
+    {
+        for (y=0;y<=20;y++)
+        {
+            for (x=0;x<=19;x++)
+            {
+                laby[x][y] = laby4[x][y];
+            }
+        }
+    }
+    if (choix == 5)
+    {
+        for (y=0;y<=20;y++)
+        {
+            for (x=0;x<=19;x++)
+            {
+                laby[x][y] = laby5[x][y];
+            }
+        }
+    }
+    if (choix == 6)
+    {
+        for (y=0;y<=20;y++)
+        {
+            for (x=0;x<=19;x++)
+            {
+                laby[x][y] = laby6[x][y];
+            }
+        }
+    }
+    if (choix == 7)
+    {
+        for (y=0;y<=20;y++)
+        {
+            for (x=0;x<=19;x++)
+            {
+                laby[x][y] = laby7[x][y];
+            }
+        }
+    }
+    if (choix == 8)
+    {
+        for (y=0;y<=20;y++)
+        {
+            for (x=0;x<=19;x++)
+            {
+                laby[x][y] = laby8[x][y];
+            }
+        }
+    }
+    if (choix == 9)
+    {
+        for (y=0;y<=20;y++)
+        {
+            for (x=0;x<=19;x++)
+            {
+                laby[x][y] = laby9[x][y];
+            }
+        }
+    }
+    if (choix == 10)
+    {
+        for (y=0;y<=20;y++)
+        {
+            for (x=0;x<=19;x++)
+            {
+                laby[x][y] = laby10[x][y];
+            }
+        }
+    }
+    for (y=0;y<=20;y++)
+    {
+        for (x=0;x<=19;x++)
+        {
+            if (laby[x][y] == 0)
             printf(" ");
-            if (laby1[x][y] == 1)
+            if (laby[x][y] == 1)
             printf("%c", mur);
         }
         printf("\n");

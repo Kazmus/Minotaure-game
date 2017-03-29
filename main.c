@@ -38,9 +38,11 @@ int main()
 
         if (choix == 'n')       // si choix => n
         {
-            effaceEcran();               // on efface l'ecran
+            effaceEcran();
+            choix = selection();             // on efface l'ecran
+            effaceEcran();
             FixePosCurseur(0,0);
-            affichelaby(x,y);             // affichage labyrinthe
+            affichelaby(choix);             // affichage labyrinthe
             FixePosCurseur(0,22);        // on fixe le curseur tout en haut a gauche de la console
             printf("Utilisez les touches z pour monter, s pour descendre,\n q pour aller à gauche, d pour aller à droite et Esc pour quitter\n\n\n");
             x=10;y=10;                  // x => 10 et y => 10 temporaire A MODIFIER PAR LA SUITE UNE FOIS LE LABYRINTHE MIS
@@ -112,7 +114,11 @@ int main()
                     printf("M");
 
                     if (x == 18 && y == 19)
+                    {
                         gameOver();
+                        attendre(2);
+                        break;
+                    }
                 }
             }
 

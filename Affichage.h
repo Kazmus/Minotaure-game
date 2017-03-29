@@ -78,8 +78,9 @@ void effaceEcran();
 
 //=========================================================================//
 
-void affichelaby(int x, int y);
+void affichelaby(int choix);
 
+int selection();
 
 int collision(int x,int y);
 
