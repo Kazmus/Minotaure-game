@@ -9,12 +9,12 @@ int main()
 {
     int choix;
     int i,x,y;            // on declare un entier x et y
-    char minotaure = 'M',joueur = 'T';
+    char joueur = 'T';
     char touche;        // on declare un char touche
 
     while(1)
     {
-        FixePosCurseur(25,12);
+        FixePosCurseur(32,12);
         puts("CHARGEMENT\n"); // pseudo chargement
         attendre(3);          // qui dure 3 sec
 
@@ -25,18 +25,15 @@ int main()
         {
             effaceEcran();      // on efface l'ecran
             puts("Bienvenue dans le jeu du labyrinthe du Minotaure\n"); // INTRODUCTION
-            puts("Appuyez sur Enter pour revenir au menu principal");   // on demande d'appuyer sur enter
+            puts("Appuyez sur une touche pour revenir au menu principal");   // on demande d'appuyer sur enter
             choix = getch();            // on rentre la touche
-            if (choix == 13)            // si choix => enter
-            {
-                effaceEcran();          // efface l'ecran
-                choix = choixMenu();    // on fait appel a la fonction qui renvoi le choix du menu
-            }
         }
         if (choix == 'o')       // si choix => o
         {
             effaceEcran();      // on efface l'ecran
             puts("VOICI LES OPTIONS");  // ici faudra mettre les options EN COURS DE DEVELOPPEMENT
+            puts("Appuyez sur une touche pour revenir au menu principal");   // on demande d'appuyer sur enter
+            choix = getch();            // on rentre la touche
         }
 
         if (choix == 'n')       // si choix => n

@@ -125,9 +125,9 @@ void affichelaby(int x,int y)
         for (x=0;x<=largeurLaby;x++)
         {
 
-            if (laby1[x][y] == 0)
+            if (laby2[x][y] == 0)
             printf(" ");
-            if (laby1[x][y] == 1)
+            if (laby2[x][y] == 1)
             printf("%c", mur);
         }
         printf("\n");
@@ -138,7 +138,7 @@ void affichelaby(int x,int y)
 void gameOver()
 {
     effaceEcran();
-    FixePosCurseur(25,12);
+    FixePosCurseur(32,12);
     printf("GAME OVER");
 }
 

@@ -11,17 +11,17 @@ void attendre(unsigned int secs)
 // RENVOI UN CHOIX DU MENU
 int choixMenu()
 {
-        FixePosCurseur(25,10);
+    FixePosCurseur(25,10);
     puts("===========================\n");
-        FixePosCurseur(25,11);
+    FixePosCurseur(25,11);
     puts("|  (I) INTRODUCTION       |\n");
-        FixePosCurseur(25,12);
+    FixePosCurseur(25,12);
     puts("|  (N) NOUVELLE PARTIE    |\n");
-        FixePosCurseur(25,13);
+    FixePosCurseur(25,13);
     puts("|  (O) OPTIONS            |\n");
-        FixePosCurseur(25,14);
+    FixePosCurseur(25,14);
     puts("|  (Esc) QUITTER LE JEU   |\n");
-        FixePosCurseur(25,15);
+    FixePosCurseur(25,15);
     puts("===========================\n\n");
 
     int choix;
