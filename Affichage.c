@@ -130,7 +130,7 @@ void affichelaby(int x,int y)
             if (laby1[x][y] == 1)
             printf("%c", mur);
         }
-            printf("\n");
+        printf("\n");
     }
 
 }
