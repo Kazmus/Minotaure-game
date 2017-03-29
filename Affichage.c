@@ -103,11 +103,10 @@ void effaceEcran()
 
 int selection()
 {
-    char choixDefilement;
-    int defilement = 1,choix;
+    char choixDefilement,mur = 219;
+    int defilement = 1,choix,x,y;
     FixePosCurseur(0,22);
     puts("Veuillez choisir un labyrinthe deplacer les laby avec Q et D ensuite sur ESPACE pour valider le choix");
-
     while (defilement <= 10 && defilement >= 1)
     {
         while (choixDefilement != 'q' || choixDefilement != 'd')
@@ -120,7 +119,10 @@ int selection()
                     break;
                 }
                 defilement--;
-                printf("%d ", defilement);
+                effaceEcran();
+                FixePosCurseur(0,22);
+                puts("Veuillez choisir un labyrinthe deplacer les laby avec Q et D ensuite sur ESPACE pour valider le choix");
+                FixePosCurseur(0,0);
             }
             if (choixDefilement == 'd')
             {
@@ -129,7 +131,10 @@ int selection()
                     break;
                 }
                 defilement++;
-                printf("%d ", defilement);
+                effaceEcran();
+                FixePosCurseur(0,22);
+                puts("Veuillez choisir un labyrinthe deplacer les laby avec Q et D ensuite sur ESPACE pour valider le choix");
+                FixePosCurseur(0,0);
             }
             if (choixDefilement == 32)
             {
@@ -138,31 +143,273 @@ int selection()
                 FixePosCurseur(0,0);
                 return choix;
             }
+            if(defilement == 1)
+            {
+                for (y=0;y<=20;y++)
+                {
+                    for (x=0;x<=19;x++)
+                    {
+                        if (laby1[x][y] == 0)
+                        printf(" ");
+                        if (laby1[x][y] == 1)
+                        printf("%c", mur);
+                    }
+                    printf("\n");
+                }
+            }
+            if(defilement == 2)
+            {
+                for (y=0;y<=20;y++)
+                {
+                    for (x=0;x<=19;x++)
+                    {
+                        if (laby2[x][y] == 0)
+                        printf(" ");
+                        if (laby2[x][y] == 1)
+                        printf("%c", mur);
+                    }
+                    printf("\n");
+                }
+            }
+            if(defilement == 3)
+            {
+                for (y=0;y<=20;y++)
+                {
+                    for (x=0;x<=19;x++)
+                    {
+                        if (laby3[x][y] == 0)
+                        printf(" ");
+                        if (laby3[x][y] == 1)
+                        printf("%c", mur);
+                    }
+                    printf("\n");
+                }
+            }
+            if(defilement == 4)
+            {
+                for (y=0;y<=20;y++)
+                {
+                    for (x=0;x<=19;x++)
+                    {
+                        if (laby4[x][y] == 0)
+                        printf(" ");
+                        if (laby4[x][y] == 1)
+                        printf("%c", mur);
+                    }
+                    printf("\n");
+                }
+            }
+            if(defilement == 5)
+            {
+                for (y=0;y<=20;y++)
+                {
+                    for (x=0;x<=19;x++)
+                    {
+                        if (laby5[x][y] == 0)
+                        printf(" ");
+                        if (laby5[x][y] == 1)
+                        printf("%c", mur);
+                    }
+                    printf("\n");
+                }
+            }
+            if(defilement == 6)
+            {
+                for (y=0;y<=20;y++)
+                {
+                    for (x=0;x<=19;x++)
+                    {
+                        if (laby6[x][y] == 0)
+                        printf(" ");
+                        if (laby6[x][y] == 1)
+                        printf("%c", mur);
+                    }
+                    printf("\n");
+                }
+            }
+            if(defilement == 7)
+            {
+                for (y=0;y<=20;y++)
+                {
+                    for (x=0;x<=19;x++)
+                    {
+                        if (laby7[x][y] == 0)
+                        printf(" ");
+                        if (laby7[x][y] == 1)
+                        printf("%c", mur);
+                    }
+                    printf("\n");
+                }
+            }
+            if(defilement == 8)
+            {
+                for (y=0;y<=20;y++)
+                {
+                    for (x=0;x<=19;x++)
+                    {
+                        if (laby8[x][y] == 0)
+                        printf(" ");
+                        if (laby8[x][y] == 1)
+                        printf("%c", mur);
+                    }
+                    printf("\n");
+                }
+            }
+            if(defilement == 9)
+            {
+                for (y=0;y<=20;y++)
+                {
+                    for (x=0;x<=19;x++)
+                    {
+                        if (laby9[x][y] == 0)
+                        printf(" ");
+                        if (laby9[x][y] == 1)
+                        printf("%c", mur);
+                    }
+                    printf("\n");
+                }
+            }
+            if(defilement == 10)
+            {
+                for (y=0;y<=20;y++)
+                {
+                    for (x=0;x<=19;x++)
+                    {
+                        if (laby10[x][y] == 0)
+                        printf(" ");
+                        if (laby10[x][y] == 1)
+                        printf("%c", mur);
+                    }
+                    printf("\n");
+                }
+            }
         }
     }
 }
 
-int collision(int x,int y)
+int collision(int x,int y,int i)
 {
     int obstacle;
 
-    if (laby1[x][y] == 0)
+    if (i == 1)
     {
-        obstacle = 0;
+        if (laby1[x][y] == 0)
+        {
+            obstacle = 0;
+        }
+        if (laby1[x][y] == 1)
+        {
+            obstacle = 1;
+        }
     }
-    if (laby1[x][y] == 1)
+    if (i == 2)
     {
-        obstacle = 1;
+        if (laby2[x][y] == 0)
+        {
+            obstacle = 0;
+        }
+        if (laby2[x][y] == 1)
+        {
+            obstacle = 1;
+        }
+    }
+    if (i == 3)
+    {
+        if (laby3[x][y] == 0)
+        {
+            obstacle = 0;
+        }
+        if (laby3[x][y] == 1)
+        {
+            obstacle = 1;
+        }
+    }
+    if (i == 4)
+    {
+        if (laby4[x][y] == 0)
+        {
+            obstacle = 0;
+        }
+        if (laby4[x][y] == 1)
+        {
+            obstacle = 1;
+        }
+    }
+    if (i == 5)
+    {
+        if (laby5[x][y] == 0)
+        {
+            obstacle = 0;
+        }
+        if (laby5[x][y] == 1)
+        {
+            obstacle = 1;
+        }
+    }
+    if (i == 6)
+    {
+        if (laby6[x][y] == 0)
+        {
+            obstacle = 0;
+        }
+        if (laby6[x][y] == 1)
+        {
+            obstacle = 1;
+        }
+    }
+    if (i == 7)
+    {
+        if (laby7[x][y] == 0)
+        {
+            obstacle = 0;
+        }
+        if (laby7[x][y] == 1)
+        {
+            obstacle = 1;
+        }
+    }
+    if (i == 8)
+    {
+        if (laby8[x][y] == 0)
+        {
+            obstacle = 0;
+        }
+        if (laby8[x][y] == 1)
+        {
+            obstacle = 1;
+        }
+    }
+    if (i == 9)
+    {
+        if (laby9[x][y] == 0)
+        {
+            obstacle = 0;
+        }
+        if (laby9[x][y] == 1)
+        {
+            obstacle = 1;
+        }
+    }
+    if (i == 10)
+    {
+        if (laby10[x][y] == 0)
+        {
+            obstacle = 0;
+        }
+        if (laby10[x][y] == 1)
+        {
+            obstacle = 1;
+        }
     }
     return obstacle;
 }
 
-void affichelaby(int choix)
+void affichelaby(int i)
 {
     int x,y,laby[hauteurLaby][largeurLaby];
     char mur = 219;
 
-    if (choix == 1)
+    if (i == 1)
     {
         for (y=0;y<=20;y++)
         {
@@ -172,7 +419,7 @@ void affichelaby(int choix)
             }
         }
     }
-    if (choix == 2)
+    if (i == 2)
     {
         for (y=0;y<=20;y++)
         {
@@ -182,7 +429,7 @@ void affichelaby(int choix)
             }
         }
     }
-    if (choix == 3)
+    if (i == 3)
     {
         for (y=0;y<=20;y++)
         {
@@ -192,7 +439,7 @@ void affichelaby(int choix)
             }
         }
     }
-    if (choix == 4)
+    if (i == 4)
     {
         for (y=0;y<=20;y++)
         {
@@ -202,7 +449,7 @@ void affichelaby(int choix)
             }
         }
     }
-    if (choix == 5)
+    if (i == 5)
     {
         for (y=0;y<=20;y++)
         {
@@ -212,7 +459,7 @@ void affichelaby(int choix)
             }
         }
     }
-    if (choix == 6)
+    if (i == 6)
     {
         for (y=0;y<=20;y++)
         {
@@ -222,7 +469,7 @@ void affichelaby(int choix)
             }
         }
     }
-    if (choix == 7)
+    if (i == 7)
     {
         for (y=0;y<=20;y++)
         {
@@ -232,7 +479,7 @@ void affichelaby(int choix)
             }
         }
     }
-    if (choix == 8)
+    if (i == 8)
     {
         for (y=0;y<=20;y++)
         {
@@ -242,7 +489,7 @@ void affichelaby(int choix)
             }
         }
     }
-    if (choix == 9)
+    if (i == 9)
     {
         for (y=0;y<=20;y++)
         {
@@ -252,7 +499,7 @@ void affichelaby(int choix)
             }
         }
     }
-    if (choix == 10)
+    if (i == 10)
     {
         for (y=0;y<=20;y++)
         {

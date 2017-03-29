@@ -44,7 +44,7 @@ int main()
             FixePosCurseur(0,0);
             affichelaby(choix);             // affichage labyrinthe
             FixePosCurseur(0,22);        // on fixe le curseur tout en haut a gauche de la console
-            printf("Utilisez les touches z pour monter, s pour descendre,\n q pour aller à gauche, d pour aller à droite et Esc pour quitter\n\n\n");
+            printf("Utilisez les touches z pour monter, s pour descendre,\n q pour aller à gauche, d pour aller à droite et Esc pour revenir au menu principal\n\n\n");
             x=10;y=10;                  // x => 10 et y => 10 temporaire A MODIFIER PAR LA SUITE UNE FOIS LE LABYRINTHE MIS
             FixePosCurseur(x,y);        // on fixe le cusreur avec les valeurs qu'on a mis dans la ligne precedente
             printf("%c", joueur);                // on affiche la 1ere lettre de notre heros sur la position du curseur
@@ -57,7 +57,7 @@ int main()
                     if(touche == 'z')           // si touche => z
                     {
                         y--;
-                        i = collision(x,y);
+                        i = collision(x,y,choix);
                         y++;
                         if(i == 0)
                         {
@@ -69,7 +69,7 @@ int main()
                     if(touche == 's')
                     {
                         y++;
-                        i = collision(x,y);
+                        i = collision(x,y,choix);
                         y--;
                         if(i == 0)
                         {
@@ -81,7 +81,7 @@ int main()
                     if(touche == 'q')
                     {
                         x--;
-                        i = collision(x,y);
+                        i = collision(x,y,choix);
                         x++;
                         if(i == 0)
                         {
@@ -93,7 +93,7 @@ int main()
                     if(touche == 'd')
                     {
                         x++;
-                        i = collision(x,y);
+                        i = collision(x,y,choix);
                         x--;
                         if(i == 0)
                         {
