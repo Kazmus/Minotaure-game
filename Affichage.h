@@ -84,5 +84,4 @@ int selection();
 
 int collision(int x,int y,int i);
 
-
 void gameOver();

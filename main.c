@@ -1,6 +1,10 @@
+/*////////////////////////////////////////////////////////////////////////////////////////////////////
+ PROJET DU MINOTAURE PAR GIRLANDO MAURIZIO, DAMIEN VANSTIPPEN, DEBORAH VANSTIPPEN ET ALLOUBI HICHAM.
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
+#include <time.h>
 #include "jeu.h"
 #include "Affichage.h"
 
@@ -11,7 +15,7 @@ int main()
     int i,x,y;            // on declare un entier x et y
     char joueur = 'T';
     char touche;        // on declare un char touche
-
+    srand(time(NULL));
     while(1)
     {
         FixePosCurseur(32,12);
@@ -45,7 +49,15 @@ int main()
             affichelaby(choix);             // affichage labyrinthe
             FixePosCurseur(0,22);        // on fixe le curseur tout en haut a gauche de la console
             printf("Utilisez les touches z pour monter, s pour descendre,\n q pour aller à gauche, d pour aller à droite et Esc pour revenir au menu principal\n\n\n");
-            x=29;y=1;                  // x => 10 et y => 10 temporaire A MODIFIER PAR LA SUITE UNE FOIS LE LABYRINTHE MIS
+
+            do // positionne aleatoirement notre heros
+            {
+                x = (rand() % (19 - 1 + 1) + 29);
+                y = (rand() % (18 - 1 + 1) + 1);
+                i = collision(x,y,choix);
+            }
+            while (i != 0);
+
             FixePosCurseur(x,y);        // on fixe le cusreur avec les valeurs qu'on a mis dans la ligne precedente
             printf("%c", joueur);                // on affiche la 1ere lettre de notre heros sur la position du curseur
 
@@ -108,17 +120,17 @@ int main()
                     break;     // si on appuye sur Esc on casse et quitte
 
                     FixePosCurseur(x,y);        // pour chaque deplacement l'initiale du heros ce deplace egalement vers la direction qu'on a appuyer
-                    printf("T");
+                    printf("%c", joueur);
 
-                    FixePosCurseur(46,19);
-                    printf("M");
+                    //FixePosCurseur(46,19);
+                   // printf("M");
 
-                    if (x == 46 && y == 19)
+                    /*if (x == 46 && y == 19)
                     {
                         gameOver();
                         attendre(2);
                         break;
-                    }
+                    }*/
                 }
             }
 

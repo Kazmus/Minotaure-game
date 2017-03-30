@@ -7,4 +7,4 @@ void attendre (unsigned int secs);
 
 int choixMenu();
 
-int aleatoire;
+
