@@ -1,7 +1,6 @@
 #define largeurLaby 21
 #define hauteurLaby 20
 
-
 int laby1 [hauteurLaby][largeurLaby]=
     {{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
      {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},

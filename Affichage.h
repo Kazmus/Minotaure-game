@@ -82,7 +82,7 @@ void affichelaby(int choix);
 
 int selection();
 
-int collision(int x,int y,int choix);
+int collision(int x,int y,int i);
 
 
 void gameOver();

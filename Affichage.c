@@ -111,6 +111,156 @@ int selection()
     {
         while (choixDefilement != 'q' || choixDefilement != 'd')
         {
+            if(defilement == 1)
+            {
+                for (y=0;y<=20;y++)
+                {
+                    FixePosCurseur(28,y);
+                    for (x=0;x<=19;x++)
+                    {
+                        if (laby1[x][y] == 0)
+                        printf(" ");
+                        if (laby1[x][y] == 1)
+                        printf("%c", mur);
+                    }
+                    printf("\n");
+                }
+            }
+            if(defilement == 2)
+            {
+                for (y=0;y<=20;y++)
+                {
+                    FixePosCurseur(28,y);
+                    for (x=0;x<=19;x++)
+                    {
+                        if (laby2[x][y] == 0)
+                        printf(" ");
+                        if (laby2[x][y] == 1)
+                        printf("%c", mur);
+                    }
+                    printf("\n");
+                }
+            }
+            if(defilement == 3)
+            {
+                for (y=0;y<=20;y++)
+                {
+                    FixePosCurseur(28,y);
+                    for (x=0;x<=19;x++)
+                    {
+                        if (laby3[x][y] == 0)
+                        printf(" ");
+                        if (laby3[x][y] == 1)
+                        printf("%c", mur);
+                    }
+                    printf("\n");
+                }
+            }
+            if(defilement == 4)
+            {
+                for (y=0;y<=20;y++)
+                {
+                    FixePosCurseur(28,y);
+                    for (x=0;x<=19;x++)
+                    {
+                        if (laby4[x][y] == 0)
+                        printf(" ");
+                        if (laby4[x][y] == 1)
+                        printf("%c", mur);
+                    }
+                    printf("\n");
+                }
+            }
+            if(defilement == 5)
+            {
+                for (y=0;y<=20;y++)
+                {
+                    FixePosCurseur(28,y);
+                    for (x=0;x<=19;x++)
+                    {
+                        if (laby5[x][y] == 0)
+                        printf(" ");
+                        if (laby5[x][y] == 1)
+                        printf("%c", mur);
+                    }
+                    printf("\n");
+                }
+            }
+            if(defilement == 6)
+            {
+                for (y=0;y<=20;y++)
+                {
+                    FixePosCurseur(28,y);
+                    for (x=0;x<=19;x++)
+                    {
+                        if (laby6[x][y] == 0)
+                        printf(" ");
+                        if (laby6[x][y] == 1)
+                        printf("%c", mur);
+                    }
+                    printf("\n");
+                }
+            }
+            if(defilement == 7)
+            {
+                for (y=0;y<=20;y++)
+                {
+                    FixePosCurseur(28,y);
+                    for (x=0;x<=19;x++)
+                    {
+                        if (laby7[x][y] == 0)
+                        printf(" ");
+                        if (laby7[x][y] == 1)
+                        printf("%c", mur);
+                    }
+                    printf("\n");
+                }
+            }
+            if(defilement == 8)
+            {
+                for (y=0;y<=20;y++)
+                {
+                    FixePosCurseur(28,y);
+                    for (x=0;x<=19;x++)
+                    {
+                        if (laby8[x][y] == 0)
+                        printf(" ");
+                        if (laby8[x][y] == 1)
+                        printf("%c", mur);
+                    }
+                    printf("\n");
+                }
+            }
+            if(defilement == 9)
+            {
+                for (y=0;y<=20;y++)
+                {
+                    FixePosCurseur(28,y);
+                    for (x=0;x<=19;x++)
+                    {
+                        if (laby9[x][y] == 0)
+                        printf(" ");
+                        if (laby9[x][y] == 1)
+                        printf("%c", mur);
+                    }
+                    printf("\n");
+                }
+            }
+            if(defilement == 10)
+            {
+                for (y=0;y<=20;y++)
+                {
+                    FixePosCurseur(28,y);
+                    for (x=0;x<=19;x++)
+                    {
+                        if (laby10[x][y] == 0)
+                        printf(" ");
+                        if (laby10[x][y] == 1)
+                        printf("%c", mur);
+                    }
+                    printf("\n");
+                }
+            }
             choixDefilement = getch();
             if (choixDefilement == 'q')
             {
@@ -143,146 +293,6 @@ int selection()
                 FixePosCurseur(0,0);
                 return choix;
             }
-            if(defilement == 1)
-            {
-                for (y=0;y<=20;y++)
-                {
-                    for (x=0;x<=19;x++)
-                    {
-                        if (laby1[x][y] == 0)
-                        printf(" ");
-                        if (laby1[x][y] == 1)
-                        printf("%c", mur);
-                    }
-                    printf("\n");
-                }
-            }
-            if(defilement == 2)
-            {
-                for (y=0;y<=20;y++)
-                {
-                    for (x=0;x<=19;x++)
-                    {
-                        if (laby2[x][y] == 0)
-                        printf(" ");
-                        if (laby2[x][y] == 1)
-                        printf("%c", mur);
-                    }
-                    printf("\n");
-                }
-            }
-            if(defilement == 3)
-            {
-                for (y=0;y<=20;y++)
-                {
-                    for (x=0;x<=19;x++)
-                    {
-                        if (laby3[x][y] == 0)
-                        printf(" ");
-                        if (laby3[x][y] == 1)
-                        printf("%c", mur);
-                    }
-                    printf("\n");
-                }
-            }
-            if(defilement == 4)
-            {
-                for (y=0;y<=20;y++)
-                {
-                    for (x=0;x<=19;x++)
-                    {
-                        if (laby4[x][y] == 0)
-                        printf(" ");
-                        if (laby4[x][y] == 1)
-                        printf("%c", mur);
-                    }
-                    printf("\n");
-                }
-            }
-            if(defilement == 5)
-            {
-                for (y=0;y<=20;y++)
-                {
-                    for (x=0;x<=19;x++)
-                    {
-                        if (laby5[x][y] == 0)
-                        printf(" ");
-                        if (laby5[x][y] == 1)
-                        printf("%c", mur);
-                    }
-                    printf("\n");
-                }
-            }
-            if(defilement == 6)
-            {
-                for (y=0;y<=20;y++)
-                {
-                    for (x=0;x<=19;x++)
-                    {
-                        if (laby6[x][y] == 0)
-                        printf(" ");
-                        if (laby6[x][y] == 1)
-                        printf("%c", mur);
-                    }
-                    printf("\n");
-                }
-            }
-            if(defilement == 7)
-            {
-                for (y=0;y<=20;y++)
-                {
-                    for (x=0;x<=19;x++)
-                    {
-                        if (laby7[x][y] == 0)
-                        printf(" ");
-                        if (laby7[x][y] == 1)
-                        printf("%c", mur);
-                    }
-                    printf("\n");
-                }
-            }
-            if(defilement == 8)
-            {
-                for (y=0;y<=20;y++)
-                {
-                    for (x=0;x<=19;x++)
-                    {
-                        if (laby8[x][y] == 0)
-                        printf(" ");
-                        if (laby8[x][y] == 1)
-                        printf("%c", mur);
-                    }
-                    printf("\n");
-                }
-            }
-            if(defilement == 9)
-            {
-                for (y=0;y<=20;y++)
-                {
-                    for (x=0;x<=19;x++)
-                    {
-                        if (laby9[x][y] == 0)
-                        printf(" ");
-                        if (laby9[x][y] == 1)
-                        printf("%c", mur);
-                    }
-                    printf("\n");
-                }
-            }
-            if(defilement == 10)
-            {
-                for (y=0;y<=20;y++)
-                {
-                    for (x=0;x<=19;x++)
-                    {
-                        if (laby10[x][y] == 0)
-                        printf(" ");
-                        if (laby10[x][y] == 1)
-                        printf("%c", mur);
-                    }
-                    printf("\n");
-                }
-            }
         }
     }
 }
@@ -290,6 +300,7 @@ int selection()
 int collision(int x,int y,int i)
 {
     int obstacle;
+    x = x - 28;
 
     if (i == 1)
     {
@@ -511,6 +522,7 @@ void affichelaby(int i)
     }
     for (y=0;y<=20;y++)
     {
+        FixePosCurseur(28,y);
         for (x=0;x<=19;x++)
         {
             if (laby[x][y] == 0)
