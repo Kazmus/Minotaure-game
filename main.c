@@ -60,6 +60,7 @@ int main()
 
             FixePosCurseur(x,y);        // on fixe le cusreur avec les valeurs qu'on a mis dans la ligne precedente
             printf("%c", joueur);                // on affiche la 1ere lettre de notre heros sur la position du curseur
+            FixePosCurseur(0,0);
 
             while(1)                       // tant que 1
             {
