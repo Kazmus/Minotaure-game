@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <conio.h>
 #include "Affichage.h"
 #include "labyrinthes.h"
 

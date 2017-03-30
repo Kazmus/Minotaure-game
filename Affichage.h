@@ -4,6 +4,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <windows.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
 
 // I N F O R M A T I O N S
 

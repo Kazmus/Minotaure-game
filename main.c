@@ -5,9 +5,6 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <time.h>
-#include "jeu.h"
-#include "Affichage.h"
-
 
 int main()
 {
@@ -123,8 +120,8 @@ int main()
                     FixePosCurseur(x,y);        // pour chaque deplacement l'initiale du heros ce deplace egalement vers la direction qu'on a appuyer
                     printf("%c", joueur);
 
-                    //FixePosCurseur(46,19);
-                   // printf("M");
+                    FixePosCurseur(46,19);
+                    printf("M");
 
                     /*if (x == 46 && y == 19)
                     {
