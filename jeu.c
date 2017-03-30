@@ -47,6 +47,9 @@ int choixMenu()
     return choix;
 }
 
+int choixMode()
+{
 
+}
 
 

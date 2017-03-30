@@ -5,6 +5,8 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <time.h>
+#include "Affichage.h"
+#include "jeu.h"
 
 int main()
 {

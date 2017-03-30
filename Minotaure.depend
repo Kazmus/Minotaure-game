@@ -99,21 +99,21 @@
 	"jeu.h"
 	"Affichage.h"
 
-1490876289 source:d:\programmation\projects\minotaure-game-master\affichage.c
-	<stdio.h>
-	<stdlib.h>
-	<conio.h>
+1490882021 source:d:\programmation\projects\minotaure-game-master\affichage.c
 	"Affichage.h"
 	"labyrinthes.h"
 
-1490872867 d:\programmation\projects\minotaure-game-master\affichage.h
+1490882021 d:\programmation\projects\minotaure-game-master\affichage.h
 	<stdlib.h>
 	<stdio.h>
 	<windows.h>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
 
 1490867941 d:\programmation\projects\minotaure-game-master\labyrinthes.h
 
-1490872867 source:d:\programmation\projects\minotaure-game-master\jeu.c
+1490882196 source:d:\programmation\projects\minotaure-game-master\jeu.c
 	"jeu.h"
 
 1490872867 d:\programmation\projects\minotaure-game-master\jeu.h
