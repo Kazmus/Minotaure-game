@@ -102,8 +102,12 @@ int selection()
 {
     char choixDefilement,mur = 219;
     int defilement = 1,choix,x,y;
-    FixePosCurseur(0,22);
-    puts("Veuillez choisir un labyrinthe deplacer les laby avec Q et D ensuite sur ESPACE pour valider le choix");
+    FixePosCurseur(23,21);
+    puts("Veuillez choisir un labyrinthe");
+    FixePosCurseur(20,22);
+    puts("Deplacer les labyrinthes avec Q et D");
+    FixePosCurseur(24,23);
+    puts("ESPACE pour valider le choix");
     while (defilement <= 10 && defilement >= 1)
     {
         while (choixDefilement != 'q' || choixDefilement != 'd')
@@ -267,8 +271,12 @@ int selection()
                 }
                 defilement--;
                 effaceEcran();
-                FixePosCurseur(0,22);
-                puts("Veuillez choisir un labyrinthe deplacer les laby avec Q et D ensuite sur ESPACE pour valider le choix");
+                FixePosCurseur(23,21);
+                puts("Veuillez choisir un labyrinthe");
+                FixePosCurseur(20,22);
+                puts("Deplacer les labyrinthes avec Q et D");
+                FixePosCurseur(24,23);
+                puts("ESPACE pour valider le choix");
                 FixePosCurseur(0,0);
             }
             if (choixDefilement == 'd')
@@ -279,8 +287,12 @@ int selection()
                 }
                 defilement++;
                 effaceEcran();
-                FixePosCurseur(0,22);
-                puts("Veuillez choisir un labyrinthe deplacer les laby avec Q et D ensuite sur ESPACE pour valider le choix");
+                FixePosCurseur(23,21);
+                puts("Veuillez choisir un labyrinthe");
+                FixePosCurseur(20,22);
+                puts("Deplacer les labyrinthes avec Q et D");
+                FixePosCurseur(24,23);
+                puts("ESPACE pour valider le choix");
                 FixePosCurseur(0,0);
             }
             if (choixDefilement == 32)

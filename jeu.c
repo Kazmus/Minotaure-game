@@ -1,4 +1,5 @@
 #include "jeu.h"
+#include "Affichage.h"
 
 // TIMER
 void attendre(unsigned int secs)
@@ -47,9 +48,112 @@ int choixMenu()
     return choix;
 }
 
+int choixOptions()
+{
+    FixePosCurseur(19,9);
+    puts("------------VOICI LES OPTIONS-------------");
+    FixePosCurseur(19,10);
+    puts("==========================================");
+    FixePosCurseur(19,11);
+    puts("|  (H)   Changer le nom du heros         |");
+    FixePosCurseur(19,12);
+    puts("|  (P)   Changer le nom de la princesse  |");
+    FixePosCurseur(19,13);
+    puts("|  (M)   choix du mode de jeu            |");
+    FixePosCurseur(19,14);
+    puts("|  (Esc) revenir au menu principal       |");
+    FixePosCurseur(19,15);
+    puts("==========================================");
+
+    int choix;
+
+    while (choix != 'h' && choix != 'p' && choix != 'm' && choix != 27)
+    {
+    choix = getch();
+    }
+    switch(choix)
+    {
+        case 'h':
+        break;
+
+        case 'p':
+        break;
+
+        case 'm':
+        break;
+
+        case 27:
+        break;
+    }
+    effaceEcran();
+    return choix;
+}
+
 int choixMode()
 {
+    int mode = 1,modeChoisi;
+    char touche;
 
+    FixePosCurseur(0,22);
+    puts("Veuillez choisir un mode de jeu deplacer les modes avec Q et D ensuite sur ESPACE pour valider le choix");
+
+    while (mode <= 3 && mode >= 1)
+    {
+        while (touche != 'q' || touche != 'd')
+        {
+            if (mode == 1)
+            {
+                FixePosCurseur(32,11);
+                puts("Mode solo");
+                FixePosCurseur(25,12);
+                puts("Le minotaure ne bouge pas");
+            }
+            if (mode == 2)
+            {
+                FixePosCurseur(32,11);
+                puts("Mode deux joueur");
+                FixePosCurseur(25,12);
+                puts("Un joueur incarne le minotaure");
+            }
+            if (mode == 3)
+            {
+                FixePosCurseur(32,11);
+                puts("Mode contre IA");
+                FixePosCurseur(16,12);
+                puts("Une intelligence artificiel incarne le minotaure");
+            }
+
+            touche = getch();
+            if (touche == 'q')
+            {
+                if (mode == 1)
+                {
+                    break;
+                }
+                mode--;
+                effaceEcran();
+                FixePosCurseur(0,22);
+                puts("Veuillez choisir un mode de jeu deplacer les modes avec Q et D ensuite sur ESPACE pour valider le choix");
+            }
+            if (touche == 'd')
+            {
+                if (mode == 3)
+                {
+                    break;
+                }
+                mode++;
+                effaceEcran();
+                FixePosCurseur(0,22);
+                puts("Veuillez choisir un mode de jeu deplacer les modes avec Q et D ensuite sur ESPACE pour valider le choix");
+            }
+            if (touche == 32)
+            {
+                modeChoisi = mode;
+                effaceEcran();
+                return modeChoisi;
+            }
+        }
+    }
 }
 
 

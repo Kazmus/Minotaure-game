@@ -113,12 +113,21 @@
 
 1490867941 d:\programmation\projects\minotaure-game-master\labyrinthes.h
 
-1490882196 source:d:\programmation\projects\minotaure-game-master\jeu.c
+1490888242 source:d:\programmation\projects\minotaure-game-master\jeu.c
 	"jeu.h"
+	"Affichage.h"
 
-1490872867 d:\programmation\projects\minotaure-game-master\jeu.h
+1490886889 d:\programmation\projects\minotaure-game-master\jeu.h
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
 	<time.h>
+
+1490889648 source:d:\programmation\projects\minotaure-game-master\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+	"Affichage.h"
+	"jeu.h"
 
