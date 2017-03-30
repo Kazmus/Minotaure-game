@@ -59,9 +59,9 @@ int choixOptions()
     FixePosCurseur(19,12);
     puts("|  (P)   Changer le nom de la princesse  |");
     FixePosCurseur(19,13);
-    puts("|  (M)   choix du mode de jeu            |");
+    puts("|  (M)   Choix du mode de jeu            |");
     FixePosCurseur(19,14);
-    puts("|  (Esc) revenir au menu principal       |");
+    puts("|  (Esc) Revenir au menu principal       |");
     FixePosCurseur(19,15);
     puts("==========================================");
 
@@ -94,8 +94,12 @@ int choixMode()
     int mode = 1,modeChoisi;
     char touche;
 
-    FixePosCurseur(0,22);
-    puts("Veuillez choisir un mode de jeu deplacer les modes avec Q et D ensuite sur ESPACE pour valider le choix");
+    FixePosCurseur(22,21);
+    puts("Veuillez choisir un mode de jeu");
+    FixePosCurseur(21,22);
+    puts("deplacer les modes avec (q) et (d)");
+    FixePosCurseur(22,23);
+    puts("(espace) pour valider le choix");
 
     while (mode <= 3 && mode >= 1)
     {
@@ -103,23 +107,23 @@ int choixMode()
         {
             if (mode == 1)
             {
-                FixePosCurseur(32,11);
+                FixePosCurseur(33,11);
                 puts("Mode solo");
                 FixePosCurseur(25,12);
                 puts("Le minotaure ne bouge pas");
             }
             if (mode == 2)
             {
-                FixePosCurseur(32,11);
+                FixePosCurseur(30,11);
                 puts("Mode deux joueur");
-                FixePosCurseur(25,12);
+                FixePosCurseur(23,12);
                 puts("Un joueur incarne le minotaure");
             }
             if (mode == 3)
             {
-                FixePosCurseur(32,11);
+                FixePosCurseur(30,11);
                 puts("Mode contre IA");
-                FixePosCurseur(16,12);
+                FixePosCurseur(13,12);
                 puts("Une intelligence artificiel incarne le minotaure");
             }
 
@@ -132,8 +136,12 @@ int choixMode()
                 }
                 mode--;
                 effaceEcran();
-                FixePosCurseur(0,22);
-                puts("Veuillez choisir un mode de jeu deplacer les modes avec Q et D ensuite sur ESPACE pour valider le choix");
+                FixePosCurseur(22,21);
+                puts("Veuillez choisir un mode de jeu");
+                FixePosCurseur(21,22);
+                puts("deplacer les modes avec (q) et (d)");
+                FixePosCurseur(22,23);
+                puts("(espace) pour valider le choix");
             }
             if (touche == 'd')
             {
@@ -143,8 +151,12 @@ int choixMode()
                 }
                 mode++;
                 effaceEcran();
-                FixePosCurseur(0,22);
-                puts("Veuillez choisir un mode de jeu deplacer les modes avec Q et D ensuite sur ESPACE pour valider le choix");
+                FixePosCurseur(22,21);
+                puts("Veuillez choisir un mode de jeu");
+                FixePosCurseur(21,22);
+                puts("deplacer les modes avec (q) et (d)");
+                FixePosCurseur(22,23);
+                puts("(espace) pour valider le choix");
             }
             if (touche == 32)
             {

@@ -1,5 +1,5 @@
 /*////////////////////////////////////////////////////////////////////////////////////////////////////
- PROJET DU MINOTAURE PAR GIRLANDO MAURIZIO, DAMIEN VANSTIPPEN, DEBORAH VANSTIPPEN ET ALLOUBI HICHAM.
+  PROJET DU MINOTAURE PAR GIRLANDO MAURIZIO, VANSTIPPEN DAMIEN, VANSTIPPEN DEBORAH ET ALLOUBI HICHAM
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
 #include <stdio.h>
 #include <stdlib.h>
@@ -57,21 +57,24 @@ int main()
             FixePosCurseur(20,23);
             puts("(Esc) pour revenir au menu principal");
 
-            do // positionne aleatoirement notre heros
+            while (x != j && y != k)
             {
-                x = (rand() % (19 - 1 + 1) + 29);
-                y = (rand() % (18 - 1 + 1) + 1);
-                i = collision(x,y,choix);
-            }
-            while (i != 0);
+                do // positionne aleatoirement notre heros
+                {
+                    x = (rand() % (19 - 1 + 1) + 29);
+                    y = (rand() % (18 - 1 + 1) + 1);
+                    i = collision(x,y,choix);
+                }
+                while (i != 0);
 
-            do // positionne aleatoirement notre minotaure
-            {
-                j = (rand() % (19 - 1 + 1) + 29);
-                k = (rand() % (18 - 1 + 1) + 1);
-                i = collision(x,y,choix);
+                do // positionne aleatoirement notre minotaure
+                {
+                    j = (rand() % (19 - 1 + 1) + 29);
+                    k = (rand() % (18 - 1 + 1) + 1);
+                    i = collision(x,y,choix);
+                }
+                while (i != 0);
             }
-            while (i != 0);
 
             FixePosCurseur(x,y);        // on fixe le cusreur avec les valeurs qu'on a mis dans la ligne precedente
             printf("%c", joueur);                // on affiche la 1ere lettre de notre heros sur la position du curseur
