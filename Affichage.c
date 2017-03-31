@@ -102,11 +102,11 @@ int selection()
 {
     char choixDefilement,mur = 219;
     int defilement = 1,choix,x,y;
-    FixePosCurseur(23,21);
+    FixePosCurseur(35,25);
     puts("Veuillez choisir un labyrinthe");
-    FixePosCurseur(20,22);
+    FixePosCurseur(32,26);
     puts("Deplacer les labyrinthes avec Q et D");
-    FixePosCurseur(24,23);
+    FixePosCurseur(36,27);
     puts("ESPACE pour valider le choix");
     while (defilement <= 10 && defilement >= 1)
     {
@@ -116,7 +116,7 @@ int selection()
             {
                 for (y=0;y<=19;y++)
                 {
-                    FixePosCurseur(28,y);
+                    FixePosCurseur(40,y);
                     for (x=0;x<=20;x++)
                     {
                         if (laby1[y][x] == 0)
@@ -131,7 +131,7 @@ int selection()
             {
                 for (y=0;y<=19;y++)
                 {
-                    FixePosCurseur(28,y);
+                    FixePosCurseur(40,y);
                     for (x=0;x<=20;x++)
                     {
                         if (laby2[y][x] == 0)
@@ -146,7 +146,7 @@ int selection()
             {
                 for (y=0;y<=19;y++)
                 {
-                    FixePosCurseur(28,y);
+                    FixePosCurseur(40,y);
                     for (x=0;x<=20;x++)
                     {
                         if (laby3[y][x] == 0)
@@ -161,7 +161,7 @@ int selection()
             {
                 for (y=0;y<=19;y++)
                 {
-                    FixePosCurseur(28,y);
+                    FixePosCurseur(40,y);
                     for (x=0;x<=20;x++)
                     {
                         if (laby4[y][x] == 0)
@@ -176,7 +176,7 @@ int selection()
             {
                 for (y=0;y<=19;y++)
                 {
-                    FixePosCurseur(28,y);
+                    FixePosCurseur(40,y);
                     for (x=0;x<=20;x++)
                     {
                         if (laby5[y][x] == 0)
@@ -191,7 +191,7 @@ int selection()
             {
                 for (y=0;y<=19;y++)
                 {
-                    FixePosCurseur(28,y);
+                    FixePosCurseur(40,y);
                     for (x=0;x<=20;x++)
                     {
                         if (laby6[y][x] == 0)
@@ -206,7 +206,7 @@ int selection()
             {
                 for (y=0;y<=19;y++)
                 {
-                    FixePosCurseur(28,y);
+                    FixePosCurseur(40,y);
                     for (x=0;x<=20;x++)
                     {
                         if (laby7[y][x] == 0)
@@ -221,7 +221,7 @@ int selection()
             {
                 for (y=0;y<=19;y++)
                 {
-                    FixePosCurseur(28,y);
+                    FixePosCurseur(40,y);
                     for (x=0;x<=20;x++)
                     {
                         if (laby8[y][x] == 0)
@@ -236,7 +236,7 @@ int selection()
             {
                 for (y=0;y<=19;y++)
                 {
-                    FixePosCurseur(28,y);
+                    FixePosCurseur(40,y);
                     for (x=0;x<=20;x++)
                     {
                         if (laby9[y][x] == 0)
@@ -251,7 +251,7 @@ int selection()
             {
                 for (y=0;y<=19;y++)
                 {
-                    FixePosCurseur(28,y);
+                    FixePosCurseur(40,y);
                     for (x=0;x<=20;x++)
                     {
                         if (laby10[y][x] == 0)
@@ -271,11 +271,11 @@ int selection()
                 }
                 defilement--;
                 effaceEcran();
-                FixePosCurseur(23,21);
+                FixePosCurseur(35,25);
                 puts("Veuillez choisir un labyrinthe");
-                FixePosCurseur(20,22);
+                FixePosCurseur(32,26);
                 puts("Deplacer les labyrinthes avec Q et D");
-                FixePosCurseur(24,23);
+                FixePosCurseur(36,27);
                 puts("ESPACE pour valider le choix");
                 FixePosCurseur(0,0);
             }
@@ -287,11 +287,12 @@ int selection()
                 }
                 defilement++;
                 effaceEcran();
-                FixePosCurseur(23,21);
+                FixePosCurseur(33,31);
+                FixePosCurseur(35,25);
                 puts("Veuillez choisir un labyrinthe");
-                FixePosCurseur(20,22);
+                FixePosCurseur(32,26);
                 puts("Deplacer les labyrinthes avec Q et D");
-                FixePosCurseur(24,23);
+                FixePosCurseur(36,27);
                 puts("ESPACE pour valider le choix");
                 FixePosCurseur(0,0);
             }
@@ -309,7 +310,7 @@ int selection()
 int collision(int x,int y,int i)
 {
     int obstacle;
-    x = x - 28;
+    x = x - 40;
 
     if (i == 1)
     {
@@ -531,7 +532,7 @@ void affichelaby(int i)
     }
     for (y=0;y<=19;y++)
     {
-        FixePosCurseur(28,y);
+        FixePosCurseur(40,y);
         for (x=0;x<=20;x++)
         {
             if (laby[y][x] == 0)
@@ -547,7 +548,7 @@ void affichelaby(int i)
 void gameOver()
 {
     effaceEcran();
-    FixePosCurseur(33,12);
+    FixePosCurseur(46,22);
     printf("GAME OVER");
 }
 

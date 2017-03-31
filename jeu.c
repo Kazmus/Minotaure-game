@@ -12,18 +12,20 @@ void attendre(unsigned int secs)
 // RENVOI UN CHOIX DU MENU
 int choixMenu()
 {
-    FixePosCurseur(25,10);
-    puts("===========================\n");
-    FixePosCurseur(25,11);
-    puts("|  (I) INTRODUCTION       |\n");
-    FixePosCurseur(25,12);
-    puts("|  (N) NOUVELLE PARTIE    |\n");
-    FixePosCurseur(25,13);
-    puts("|  (O) OPTIONS            |\n");
-    FixePosCurseur(25,14);
-    puts("|  (Esc) QUITTER LE JEU   |\n");
-    FixePosCurseur(25,15);
-    puts("===========================\n\n");
+    FixePosCurseur(36,19);
+    puts("-------MENU PRINCIPAL-------");
+    FixePosCurseur(36,20);
+    puts("============================");
+    FixePosCurseur(36,21);
+    puts("|   (I) INTRODUCTION       |");
+    FixePosCurseur(36,22);
+    puts("|   (N) NOUVELLE PARTIE    |");
+    FixePosCurseur(36,23);
+    puts("|   (O) OPTIONS            |");
+    FixePosCurseur(36,24);
+    puts("|   (Esc) QUITTER LE JEU   |");
+    FixePosCurseur(36,25);
+    puts("============================");
 
     int choix;
 
@@ -50,19 +52,19 @@ int choixMenu()
 
 int choixOptions()
 {
-    FixePosCurseur(19,9);
+    FixePosCurseur(29,19);
     puts("------------VOICI LES OPTIONS-------------");
-    FixePosCurseur(19,10);
+    FixePosCurseur(29,20);
     puts("==========================================");
-    FixePosCurseur(19,11);
+    FixePosCurseur(29,21);
     puts("|  (H)   Changer le nom du heros         |");
-    FixePosCurseur(19,12);
+    FixePosCurseur(29,22);
     puts("|  (P)   Changer le nom de la princesse  |");
-    FixePosCurseur(19,13);
+    FixePosCurseur(29,23);
     puts("|  (M)   Choix du mode de jeu            |");
-    FixePosCurseur(19,14);
+    FixePosCurseur(29,24);
     puts("|  (Esc) Revenir au menu principal       |");
-    FixePosCurseur(19,15);
+    FixePosCurseur(29,25);
     puts("==========================================");
 
     int choix;
@@ -94,11 +96,11 @@ int choixMode()
     int mode = 1,modeChoisi;
     char touche;
 
-    FixePosCurseur(22,21);
+    FixePosCurseur(33,23);
     puts("Veuillez choisir un mode de jeu");
-    FixePosCurseur(21,22);
+    FixePosCurseur(32,24);
     puts("deplacer les modes avec (q) et (d)");
-    FixePosCurseur(22,23);
+    FixePosCurseur(33,25);
     puts("(espace) pour valider le choix");
 
     while (mode <= 3 && mode >= 1)
@@ -107,23 +109,23 @@ int choixMode()
         {
             if (mode == 1)
             {
-                FixePosCurseur(33,11);
+                FixePosCurseur(44,11);
                 puts("Mode solo");
-                FixePosCurseur(25,12);
+                FixePosCurseur(36,13);
                 puts("Le minotaure ne bouge pas");
             }
             if (mode == 2)
             {
-                FixePosCurseur(30,11);
+                FixePosCurseur(41,11);
                 puts("Mode deux joueur");
-                FixePosCurseur(23,12);
+                FixePosCurseur(34,13);
                 puts("Un joueur incarne le minotaure");
             }
             if (mode == 3)
             {
-                FixePosCurseur(30,11);
+                FixePosCurseur(42,11);
                 puts("Mode contre IA");
-                FixePosCurseur(13,12);
+                FixePosCurseur(25,13);
                 puts("Une intelligence artificiel incarne le minotaure");
             }
 
@@ -136,11 +138,11 @@ int choixMode()
                 }
                 mode--;
                 effaceEcran();
-                FixePosCurseur(22,21);
+                FixePosCurseur(33,23);
                 puts("Veuillez choisir un mode de jeu");
-                FixePosCurseur(21,22);
+                FixePosCurseur(32,24);
                 puts("deplacer les modes avec (q) et (d)");
-                FixePosCurseur(22,23);
+                FixePosCurseur(33,25);
                 puts("(espace) pour valider le choix");
             }
             if (touche == 'd')
@@ -151,11 +153,11 @@ int choixMode()
                 }
                 mode++;
                 effaceEcran();
-                FixePosCurseur(22,21);
+                FixePosCurseur(33,23);
                 puts("Veuillez choisir un mode de jeu");
-                FixePosCurseur(21,22);
+                FixePosCurseur(32,24);
                 puts("deplacer les modes avec (q) et (d)");
-                FixePosCurseur(22,23);
+                FixePosCurseur(33,25);
                 puts("(espace) pour valider le choix");
             }
             if (touche == 32)
@@ -167,5 +169,3 @@ int choixMode()
         }
     }
 }
-
-

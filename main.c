@@ -10,6 +10,7 @@
 
 int main()
 {
+    system("mode con lines=50 cols=100");
     int choix,mode,option;
     int i,j,k,x,y;            // on declare un entier x et y
     char joueur = 'T',minotaure = 'M';
@@ -48,20 +49,19 @@ int main()
             effaceEcran();
             choix = selection();             // on efface l'ecran
             effaceEcran();
-            FixePosCurseur(28,0);
             affichelaby(choix);             // affichage labyrinthe
-            FixePosCurseur(11,21);        // on fixe le curseur tout en haut a gauche de la console
+            FixePosCurseur(23,25);        // on fixe le curseur tout en haut a gauche de la console
             puts("Utilisez les touches (z) pour monter, (s) pour descendre");
-            FixePosCurseur(14,22);
+            FixePosCurseur(26,26);
             puts("(q) pour aller à gauche, (d) pour aller à droite");
-            FixePosCurseur(20,23);
+            FixePosCurseur(32,27);
             puts("(Esc) pour revenir au menu principal");
 
-            while (x != j && y != k)
+            do
             {
                 do // positionne aleatoirement notre heros
                 {
-                    x = (rand() % (19 - 1 + 1) + 29);
+                    x = (rand() % (19 - 1 + 1) + 38);
                     y = (rand() % (18 - 1 + 1) + 1);
                     i = collision(x,y,choix);
                 }
@@ -69,12 +69,13 @@ int main()
 
                 do // positionne aleatoirement notre minotaure
                 {
-                    j = (rand() % (19 - 1 + 1) + 29);
+                    j = (rand() % (19 - 1 + 1) + 38);
                     k = (rand() % (18 - 1 + 1) + 1);
-                    i = collision(x,y,choix);
+                    i = collision(j,k,choix);
                 }
                 while (i != 0);
             }
+            while (x != j && y != k);
 
             FixePosCurseur(x,y);        // on fixe le cusreur avec les valeurs qu'on a mis dans la ligne precedente
             printf("%c", joueur);                // on affiche la 1ere lettre de notre heros sur la position du curseur
@@ -88,7 +89,12 @@ int main()
             {
                 if(kbhit())                 // si touche enfoncer
                 {
+                    do
+                    {
                     touche=getch();             // touche => touche qu'on appuye sans passer par enter
+                    }
+                    while(touche != 'z' && touche != 's' && touche != 'q' && touche != 'd' && touche != 27);
+
                     if(touche == 'z')           // si touche => z
                     {
                         y--;
@@ -137,6 +143,7 @@ int main()
                             x++;
                         }
                     }
+
                     if (x == j && y == k)
                     {
                         gameOver();
@@ -147,15 +154,18 @@ int main()
                     if(touche == 27)
                     break;     // si on appuye sur Esc on casse et quitte
 
-
-
                     FixePosCurseur(x,y);        // pour chaque deplacement l'initiale du heros ce deplace egalement vers la direction qu'on a appuyer
                     printf("%c", joueur);
 
                     if (mode == 2)
                     {
+                        do
+                        {
                         touche=getch();             // touche => touche qu'on appuye sans passer par enter
-                        if(touche == 'z')           // si touche => z
+                        }
+                        while(touche != 'i' && touche != 'k' && touche != 'j' && touche != 'l' && touche != 27);
+
+                        if(touche == 'i')           // si touche => z
                         {
                             k--;
                             i = collision(j,k,choix);
@@ -167,7 +177,7 @@ int main()
                                 k--;
                             }
                         }
-                        if(touche == 's')
+                        if(touche == 'k')
                         {
                             k++;
                             i = collision(j,k,choix);
@@ -179,7 +189,7 @@ int main()
                                 k++;
                             }
                         }
-                        if(touche == 'q')
+                        if(touche == 'j')
                         {
                             j--;
                             i = collision(j,k,choix);
@@ -191,7 +201,7 @@ int main()
                                 j--;
                             }
                         }
-                        if(touche == 'd')
+                        if(touche == 'l')
                         {
                             j++;
                             i = collision(j,k,choix);
@@ -203,15 +213,89 @@ int main()
                                 j++;
                             }
                         }
-                   // FixePosCurseur(j,k);
-                   // printf("M");
+
+                        if (x == j && y == k)
+                        {
+                        gameOver();
+                        attendre(2);
+                        break;
+                        }
+
+                        if(touche == 27)
+                        break;     // si on appuye sur Esc on casse et quitte
+
+                        FixePosCurseur(j,k);
+                        printf("%c", minotaure);
+                    }
+
+                    if (mode == 3)
+                    {
+                        do
+                        {
+                            if(y < k)           // si touche => z
+                            {
+                                k--;
+                                i = collision(j,k,choix);
+                                k++;
+                                if(i == 0)
+                                {
+                                    FixePosCurseur(j,k);    // on fait y - 1 a chaque fois qu'on appunye sur z
+                                    printf(" ");
+                                    k--;
+                                }
+                            }
+                            if(y > k)
+                            {
+                                k++;
+                                i = collision(j,k,choix);
+                                k--;
+                                if(i == 0)
+                                {
+                                    FixePosCurseur(j,k);    // on fait y + 1 a chaque fois qu'on appuye sur z
+                                    printf(" ");
+                                    k++;
+                                }
+                            }
+                            if(x < j)
+                            {
+                                j--;
+                                i = collision(j,k,choix);
+                                j++;
+                                if(i == 0)
+                                {
+                                    FixePosCurseur(j,k);    // on fait x - 1 a chaque fois qu'on appuye sur z
+                                    printf(" ");
+                                    j--;
+                                }
+                            }
+                            if(x > j)
+                            {
+                                j++;
+                                i = collision(j,k,choix);
+                                j--;
+                                if(i == 0)
+                                {
+                                    FixePosCurseur(j,k);    // on fait x + 1 a chaque fois qu'on appuye sur z
+                                    printf(" ");
+                                    j++;
+                                }
+                            }
+                        }
+                        while (i == 1);
+
+                        if (x == j && y == k)
+                        {
+                        gameOver();
+                        attendre(2);
+                        break;
+                        }
+
+                        FixePosCurseur(j,k);
+                        printf("%c", minotaure);
                     }
                 }
             }
-
-
-
-        /// Ici faudra rajouter : gestion du score, du déplacement du minotaure, de la rencontre Thésée et Ariane ou Thésée et le Minotaure (après déplacement de Thésée ou du minotaure)
+        /// Ici faudra rajouter : gestion du score, de la rencontre Thésée et Ariane
         }
         if (choix == 27)
             return 0;
