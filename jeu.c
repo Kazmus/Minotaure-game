@@ -61,15 +61,13 @@ int choixOptions()
     FixePosCurseur(29,22);
     puts("|  (P)   Changer le nom de la princesse  |");
     FixePosCurseur(29,23);
-    puts("|  (M)   Choix du mode de jeu            |");
-    FixePosCurseur(29,24);
     puts("|  (Esc) Revenir au menu principal       |");
-    FixePosCurseur(29,25);
+    FixePosCurseur(29,24);
     puts("==========================================");
 
     int choix;
 
-    while (choix != 'h' && choix != 'p' && choix != 'm' && choix != 27)
+    while (choix != 'h' && choix != 'p' && choix != 27)
     {
     choix = getch();
     }
@@ -79,9 +77,6 @@ int choixOptions()
         break;
 
         case 'p':
-        break;
-
-        case 'm':
         break;
 
         case 27:
