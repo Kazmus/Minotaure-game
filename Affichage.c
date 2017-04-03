@@ -102,12 +102,16 @@ int selection()
 {
     char choixDefilement,mur = 219;
     int defilement = 1,choix,x,y;
+
+    Couleur(14,0);
     FixePosCurseur(35,25);
     puts("Veuillez choisir un labyrinthe");
     FixePosCurseur(32,26);
     puts("Deplacer les labyrinthes avec Q et D");
     FixePosCurseur(36,27);
     puts("ESPACE pour valider le choix");
+    Couleur(15,0);
+
     while (defilement <= 10 && defilement >= 1)
     {
         while (choixDefilement != 'q' || choixDefilement != 'd')
@@ -271,6 +275,7 @@ int selection()
                 }
                 defilement--;
                 effaceEcran();
+                Couleur(14,0);
                 FixePosCurseur(35,25);
                 puts("Veuillez choisir un labyrinthe");
                 FixePosCurseur(32,26);
@@ -278,6 +283,7 @@ int selection()
                 FixePosCurseur(36,27);
                 puts("ESPACE pour valider le choix");
                 FixePosCurseur(0,0);
+                Couleur(15,0);
             }
             if (choixDefilement == 'd')
             {
@@ -287,7 +293,7 @@ int selection()
                 }
                 defilement++;
                 effaceEcran();
-                FixePosCurseur(33,31);
+                Couleur(14,0);
                 FixePosCurseur(35,25);
                 puts("Veuillez choisir un labyrinthe");
                 FixePosCurseur(32,26);
@@ -295,6 +301,7 @@ int selection()
                 FixePosCurseur(36,27);
                 puts("ESPACE pour valider le choix");
                 FixePosCurseur(0,0);
+                Couleur(15,0);
             }
             if (choixDefilement == 32)
             {

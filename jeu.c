@@ -90,13 +90,14 @@ int choixMode()
 {
     int mode = 1,modeChoisi;
     char touche;
-
+    Couleur(14,0);
     FixePosCurseur(33,23);
     puts("Veuillez choisir un mode de jeu");
     FixePosCurseur(32,24);
     puts("deplacer les modes avec (q) et (d)");
     FixePosCurseur(33,25);
     puts("(espace) pour valider le choix");
+    Couleur(15,0);
 
     while (mode <= 3 && mode >= 1)
     {
@@ -133,12 +134,14 @@ int choixMode()
                 }
                 mode--;
                 effaceEcran();
+                Couleur(14,0);
                 FixePosCurseur(33,23);
                 puts("Veuillez choisir un mode de jeu");
                 FixePosCurseur(32,24);
                 puts("deplacer les modes avec (q) et (d)");
                 FixePosCurseur(33,25);
                 puts("(espace) pour valider le choix");
+                Couleur(15,0);
             }
             if (touche == 'd')
             {
@@ -148,12 +151,14 @@ int choixMode()
                 }
                 mode++;
                 effaceEcran();
+                Couleur(14,0);
                 FixePosCurseur(33,23);
                 puts("Veuillez choisir un mode de jeu");
                 FixePosCurseur(32,24);
                 puts("deplacer les modes avec (q) et (d)");
                 FixePosCurseur(33,25);
                 puts("(espace) pour valider le choix");
+                Couleur(15,0);
             }
             if (touche == 32)
             {
