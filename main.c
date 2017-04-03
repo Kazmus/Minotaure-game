@@ -31,8 +31,8 @@ int main()
             case 'i':       // si choix => i
             {
                 effaceEcran();      // on efface l'ecran
-                puts("Bienvenue dans le jeu du labyrinthe du Minotaure"); // INTRODUCTION
-                puts("Appuyez sur une touche pour revenir au menu principal");   // on demande d'appuyer sur enter
+                puts("ICI FAUDRA METTRE INTRO"); // INTRODUCTION
+                puts("Appuyez sur n'importe quelle touche pour revenir au menu principal");   // on demande d'appuyer sur enter
                 choix = getch();            // on rentre la touche
                 effaceEcran();
                 break;
@@ -92,8 +92,6 @@ int main()
                     if(kbhit())                 // si touche enfoncer
                     {
                         //DELACEMENT JOUEUR UN peu importe quel mode------------------------------------/////////////////////////////////////////////////////////////////////////////////////
-                        if (mode == 1)
-                        {
                         do
                         {
                         touche=getch();             // touche => touche qu'on appuye sans passer par enter
@@ -171,7 +169,7 @@ int main()
 
                         FixePosCurseur(x,y);        // pour chaque deplacement l'initiale du heros ce deplace egalement vers la direction qu'on a appuyer
                         printf("%c", joueur);
-                        }
+
                         //MODE DEUX JOUEURS---------------------------------------------------/////////////////////////////////////////////////////////////////////////
                         if (mode == 2)
                         {
