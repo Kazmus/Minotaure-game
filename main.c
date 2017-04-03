@@ -95,54 +95,67 @@ int main()
                     }
                     while(touche != 'z' && touche != 's' && touche != 'q' && touche != 'd' && touche != 27);
 
-                    if(touche == 'z')           // si touche => z
+                    switch(touche)
                     {
-                        y--;
-                        i = collision(x,y,choix);
-                        y++;
-                        if(i == 0)
+                        case 'z':          // si touche => z
                         {
-                            FixePosCurseur(x,y);    // on fait y - 1 a chaque fois qu'on appuye sur z
-                            printf(" ");
                             y--;
-                        }
-                    }
-                    if(touche == 's')
-                    {
-                        y++;
-                        i = collision(x,y,choix);
-                        y--;
-                        if(i == 0)
-                        {
-                            FixePosCurseur(x,y);    // on fait y + 1 a chaque fois qu'on appuye sur z
-                            printf(" ");
+                            i = collision(x,y,choix);
                             y++;
+                            if(i == 0)
+                            {
+                                FixePosCurseur(x,y);    // on fait y - 1 a chaque fois qu'on appuye sur z
+                                printf(" ");
+                                y--;
+                            }
+                            break;
                         }
-                    }
-                    if(touche == 'q')
-                    {
-                        x--;
-                        i = collision(x,y,choix);
-                        x++;
-                        if(i == 0)
+                        case 's':
                         {
-                            FixePosCurseur(x,y);    // on fait x - 1 a chaque fois qu'on appuye sur z
-                            printf(" ");
+                            y++;
+                            i = collision(x,y,choix);
+                            y--;
+                            if(i == 0)
+                            {
+                                FixePosCurseur(x,y);    // on fait y + 1 a chaque fois qu'on appuye sur z
+                                printf(" ");
+                                y++;
+                            }
+                            break;
+                        }
+                        case 'q':
+                        {
                             x--;
-                        }
-                    }
-                    if(touche == 'd')
-                    {
-                        x++;
-                        i = collision(x,y,choix);
-                        x--;
-                        if(i == 0)
-                        {
-                            FixePosCurseur(x,y);    // on fait x + 1 a chaque fois qu'on appuye sur z
-                            printf(" ");
+                            i = collision(x,y,choix);
                             x++;
+                            if(i == 0)
+                            {
+                                FixePosCurseur(x,y);    // on fait x - 1 a chaque fois qu'on appuye sur z
+                                printf(" ");
+                                x--;
+                            }
+                            break;
                         }
+                        case 'd':
+                        {
+                            x++;
+                            i = collision(x,y,choix);
+                            x--;
+                            if(i == 0)
+                            {
+                                FixePosCurseur(x,y);    // on fait x + 1 a chaque fois qu'on appuye sur z
+                                printf(" ");
+                                x++;
+                            }
+                            break;
+                        }
+
+                        case 27:
+                        break;     // si on appuye sur Esc on casse et quitte
                     }
+
+                    if (touche == 27)
+                        break;
 
                     if (x == j && y == k)
                     {
@@ -151,12 +164,13 @@ int main()
                         break;
                     }
 
-                    if(touche == 27)
-                    break;     // si on appuye sur Esc on casse et quitte
+
 
                     FixePosCurseur(x,y);        // pour chaque deplacement l'initiale du heros ce deplace egalement vers la direction qu'on a appuyer
                     printf("%c", joueur);
 
+
+                    //MODE DEUX JOUEURS---------------------------------------------------/////////////////////////////////////////////////////////////////////////
                     if (mode == 2)
                     {
                         do
@@ -165,54 +179,67 @@ int main()
                         }
                         while(touche != 'i' && touche != 'k' && touche != 'j' && touche != 'l' && touche != 27);
 
-                        if(touche == 'i')           // si touche => z
+                        switch(touche)
                         {
-                            k--;
-                            i = collision(j,k,choix);
-                            k++;
-                            if(i == 0)
+                            case 'i':          // si touche => z
                             {
-                                FixePosCurseur(j,k);    // on fait y - 1 a chaque fois qu'on appuye sur z
-                                printf(" ");
-                                k--;
+                                y--;
+                                i = collision(x,y,choix);
+                                y++;
+                                if(i == 0)
+                                {
+                                    FixePosCurseur(x,y);    // on fait y - 1 a chaque fois qu'on appuye sur z
+                                    printf(" ");
+                                    y--;
+                                }
+                                break;
                             }
-                        }
-                        if(touche == 'k')
-                        {
-                            k++;
-                            i = collision(j,k,choix);
-                            k--;
-                            if(i == 0)
+                            case 'k':
                             {
-                                FixePosCurseur(j,k);    // on fait y + 1 a chaque fois qu'on appuye sur z
-                                printf(" ");
-                                k++;
+                                y++;
+                                i = collision(x,y,choix);
+                                y--;
+                                if(i == 0)
+                                {
+                                    FixePosCurseur(x,y);    // on fait y + 1 a chaque fois qu'on appuye sur z
+                                    printf(" ");
+                                    y++;
+                                }
+                                break;
                             }
-                        }
-                        if(touche == 'j')
-                        {
-                            j--;
-                            i = collision(j,k,choix);
-                            j++;
-                            if(i == 0)
+                            case 'j':
                             {
-                                FixePosCurseur(j,k);    // on fait x - 1 a chaque fois qu'on appuye sur z
-                                printf(" ");
-                                j--;
+                                x--;
+                                i = collision(x,y,choix);
+                                x++;
+                                if(i == 0)
+                                {
+                                    FixePosCurseur(x,y);    // on fait x - 1 a chaque fois qu'on appuye sur z
+                                    printf(" ");
+                                    x--;
+                                }
+                                break;
                             }
-                        }
-                        if(touche == 'l')
-                        {
-                            j++;
-                            i = collision(j,k,choix);
-                            j--;
-                            if(i == 0)
+                            case 'l':
                             {
-                                FixePosCurseur(j,k);    // on fait x + 1 a chaque fois qu'on appuye sur z
-                                printf(" ");
-                                j++;
+                                x++;
+                                i = collision(x,y,choix);
+                                x--;
+                                if(i == 0)
+                                {
+                                    FixePosCurseur(x,y);    // on fait x + 1 a chaque fois qu'on appuye sur z
+                                    printf(" ");
+                                    x++;
+                                }
+                                break;
                             }
+
+                            case 27:
+                            break;     // si on appuye sur Esc on casse et quitte
                         }
+
+                        if(touche == 27)
+                        break;     // si on appuye sur Esc on casse et quitte
 
                         if (x == j && y == k)
                         {
@@ -221,13 +248,11 @@ int main()
                         break;
                         }
 
-                        if(touche == 27)
-                        break;     // si on appuye sur Esc on casse et quitte
-
                         FixePosCurseur(j,k);
                         printf("%c", minotaure);
                     }
 
+                    //MODE CONTRE IA---------------------------------------------------/////////////////////////////////////////////////////////////////////////
                     if (mode == 3)
                     {
                         do
