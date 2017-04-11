@@ -89,3 +89,8 @@ int collision(int x,int y,int i);
 
 void gameOver();
 
+void win();
+
+void introHistoire();
+
+void afficheScore(int nombrePas);

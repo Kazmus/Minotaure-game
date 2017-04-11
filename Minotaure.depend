@@ -164,3 +164,35 @@
 	"Affichage.h"
 	"jeu.h"
 
+1491666165 source:c:\users\kazmus\desktop\minotaure-game-master\affichage.c
+	"Affichage.h"
+	"labyrinthes.h"
+
+1491665359 c:\users\kazmus\desktop\minotaure-game-master\affichage.h
+	<stdlib.h>
+	<stdio.h>
+	<windows.h>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+
+1491528720 c:\users\kazmus\desktop\minotaure-game-master\labyrinthes.h
+
+1491657106 source:c:\users\kazmus\desktop\minotaure-game-master\jeu.c
+	"jeu.h"
+	"Affichage.h"
+
+1491528720 c:\users\kazmus\desktop\minotaure-game-master\jeu.h
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+
+1491666295 source:c:\users\kazmus\desktop\minotaure-game-master\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+	"Affichage.h"
+	"jeu.h"
+

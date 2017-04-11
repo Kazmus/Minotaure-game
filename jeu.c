@@ -27,7 +27,7 @@ int choixMenu()
     FixePosCurseur(36,25);
     puts("============================");
 
-    int choix;
+    char choix;
 
     while (choix != 'i' && choix != 'n' && choix != 'o' && choix != 27)
     {
@@ -65,7 +65,7 @@ int choixOptions()
     FixePosCurseur(29,24);
     puts("==========================================");
 
-    int choix;
+    char choix;
 
     while (choix != 'h' && choix != 'p' && choix != 27)
     {

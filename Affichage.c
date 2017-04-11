@@ -559,3 +559,54 @@ void gameOver()
     printf("GAME OVER");
 }
 
+void win()
+{
+    effaceEcran();
+    FixePosCurseur(30,22);
+    printf("Felicitation, vous avez sauve la princesse");
+}
+
+void introHistoire()
+{
+    FixePosCurseur(26,19);
+    printf("Il y avait fort longtemps, dans un pays lointain,");
+    attendre(2);
+    FixePosCurseur(40,20);
+    printf("Une ravissante princesse.");
+    attendre(2);
+    FixePosCurseur(20,21);
+    printf("Elle etait aimee par le peuple de par sa beaute et sa gentillesse.");
+    attendre(2);
+    FixePosCurseur(20,22);
+    printf("Malheureusement, la princesse aimee de tous, fut un jour kidnappe!");
+    attendre(2);
+    FixePosCurseur(18,23);
+    printf("Le rois eprit d'une grande tristesse demanda a de valeureux chevalier,");
+    attendre(2);
+    FixePosCurseur(38,24);
+    printf("De bien vouloir sauve sa fille.");
+    attendre(2);
+    FixePosCurseur(22,25);
+    printf("Un jeune chevalier, qui aimait la princesse de tout son coeur,");
+    attendre(2);
+    FixePosCurseur(30,26);
+    printf("Demanda au Roi ou etait emprisonnee sa bien-aimee.");
+    attendre(2);
+    FixePosCurseur(18,27);
+    printf("Ma precieuse fille a ete emmenee par le vil Minautore, disait le roi,");
+    attendre(2);
+    FixePosCurseur(38,28);
+    printf("Tu la trouvera dans sa demeure.");
+    attendre(2);
+    FixePosCurseur(24,29);
+    printf("Mais prend garde jeune heros sa demeure est un vrai labyrinthe");
+}
+
+void afficheScore(int nombrePas)
+{
+    int score = 0;
+
+    score = nombrePas;
+    FixePosCurseur(30,24);
+    printf("Vous avez sauve la princesse en %d pas",score);
+}
