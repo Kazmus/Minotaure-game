@@ -94,3 +94,5 @@ void win();
 void introHistoire();
 
 void afficheScore(int nombrePas);
+
+void afficheMino();

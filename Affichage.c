@@ -563,43 +563,55 @@ void win()
 {
     effaceEcran();
     FixePosCurseur(30,22);
-    printf("Felicitation, vous avez sauve la princesse");
+    printf("Felicitations, vous avez sauve la princesse");
 }
 
 void introHistoire()
 {
-    FixePosCurseur(26,19);
+    char touche;
+
+    FixePosCurseur(25,19);
     printf("Il y avait fort longtemps, dans un pays lointain,");
     attendre(2);
-    FixePosCurseur(40,20);
+    FixePosCurseur(39,20);
     printf("Une ravissante princesse.");
     attendre(2);
-    FixePosCurseur(20,21);
+    FixePosCurseur(19,21);
     printf("Elle etait aimee par le peuple de par sa beaute et sa gentillesse.");
     attendre(2);
-    FixePosCurseur(20,22);
+    FixePosCurseur(19,22);
     printf("Malheureusement, la princesse aimee de tous, fut un jour kidnappe!");
     attendre(2);
-    FixePosCurseur(18,23);
+    FixePosCurseur(17,23);
     printf("Le rois eprit d'une grande tristesse demanda a de valeureux chevalier,");
     attendre(2);
-    FixePosCurseur(38,24);
+    FixePosCurseur(36,24);
     printf("De bien vouloir sauve sa fille.");
     attendre(2);
-    FixePosCurseur(22,25);
+    FixePosCurseur(21,25);
     printf("Un jeune chevalier, qui aimait la princesse de tout son coeur,");
     attendre(2);
-    FixePosCurseur(30,26);
+    FixePosCurseur(28,26);
     printf("Demanda au Roi ou etait emprisonnee sa bien-aimee.");
     attendre(2);
-    FixePosCurseur(18,27);
+    FixePosCurseur(17,27);
     printf("Ma precieuse fille a ete emmenee par le vil Minautore, disait le roi,");
     attendre(2);
-    FixePosCurseur(38,28);
+    FixePosCurseur(36,28);
     printf("Tu la trouvera dans sa demeure.");
     attendre(2);
-    FixePosCurseur(24,29);
+    FixePosCurseur(20,29);
     printf("Mais prend garde jeune heros sa demeure est un vrai labyrinthe");
+    attendre(2);
+    FixePosCurseur(19,31);
+    printf("Veuillez appuyez sur la touche ESC pour revenir au menu principal");
+
+    while (touche != 27)
+    {
+        touche = getch();
+        if (touche == 27)
+            break;
+    }
 }
 
 void afficheScore(int nombrePas)
@@ -609,4 +621,77 @@ void afficheScore(int nombrePas)
     score = nombrePas;
     FixePosCurseur(30,24);
     printf("Vous avez sauve la princesse en %d pas",score);
+}
+
+void afficheMino()
+{
+
+puts("  MMMM                                                                                       MMMM  ");
+puts(" :MMMM                                                                                       MMMMH ");
+puts(" MMMMM                                                                                       MMMMM ");
+puts(" MMMMM                                                                                       MMMMM ");
+puts(" MMMMM                                                                                       MMMMM ");
+puts(".MMMMMH                                                                                     :MMMMM:");
+puts(".MMMMMM                                                                                     MMMMMMI");
+puts(" MMMMMMH                                                                                   IMMMMMM ");
+puts(" MMMMMMM                              .MMMMMM .MMMMM. MMMMMM.                              MMMMMMM ");
+puts(" MMMMMMMM              MMMMMM  MM  IMMMMMMMMMMMMMMMMMMMMMMMMMMMI  MM  MMMMMM.             MMMMMMMM ");
+puts(" IMMMMMMMM:          MMMMMMMMMM MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM MMMMMMMMMM          :MMMMMMMMM ");
+puts("  MMMMMMMMMMMM   IMMMMMMMMMMMMMM MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM MMMMMMMMMMMMMMH   MMMMMMMMMMMM  ");
+puts("   MMMMMMMMMMMMMMMMMMMMMMMMMMMMMM:MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM.MMMMMMMMMMMMMMMMMMMMMMMMMMMMMM   ");
+puts("   .MMMMMMMMMMMMMMMMMMMMMMMMMMMMMM MMMMMMMHMMMMMMMMMMMMMHMMMMMMM MMMMMMMMMMMMMMMMMMMMMMMMMMMMMM:   ");
+puts("     MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM     ");
+puts("      MMMMMMMMMMMMMMMMMMMMMMMMMMMMMIMMMMMMMMMMMMMMMMMMMMMMMMMMMHMMMMMMMMMMMMMMMMMMMMMMMMMMMMM.     ");
+puts("       .MMMMMMMMMMMMMMMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMMMMMMMMMM:       ");
+puts("         .MMMMMMMMMMMMMMMM.   MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMHMMMMM   .MMMMMMMMMMMMMMMM:         ");
+puts("            MMMMMMMMM            MMMMMM MMMMMMMMMMMMMMMMMMM MMMMMM            MMMMMMMMM            ");
+puts("                                MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM                                ");
+puts("                               .MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM:                               ");
+puts("                                 IMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMI                                 ");
+puts("                                 MMM       MMMMMMMMMMMMM       MMM                                 ");
+puts("                               MMMM         MMMMMMMMMMM         MMMM                               ");
+puts("                              MMMMMM       MMMMMMMMMMMMM       MMMMMM                              ");
+puts("                              MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM                              ");
+puts("                               MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM                               ");
+puts("                               MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM                               ");
+puts("                               MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMI                               ");
+puts("                              MM MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM MM                              ");
+puts("                              MMM MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM MMM                              ");
+puts("                              MMMM MMMMMMMMMMMMMMMMMMMMMMMMMMMMM.MMMM                              ");
+puts("                             MMMMMM MMMMMMMMMMMMMMMMMMMMMMMMMMM MMMMMM                             ");
+puts("                             MMMMMMM.MMMM MMMMMMMMMMMMMMM.MMMM MMMMMMM                             ");
+puts("                            MMMMMMMMM.MM MMMMMMMMMMMMMMMMM.MM MMMMMMMMM                            ");
+puts("                            MMMM MMMMMMMMMMIMMMMMMMMMMM:MMMM:MMMMM MMMM                            ");
+puts("                           MMMMMHMMMMMM.MMMMMMMMMMMMMMMMHMM.MMMMMMIMMMMM                           ");
+puts("                          MMMMMMM MMMMMMMMMMMMMMMMMMMMMMMMMHMMMMM.MMMMMMM                          ");
+puts("                        MMMMMMMMM.MMMMM:MM MMMMMMMMMMMMM MM.MMMMM MMMMMMMMM.                       ");
+puts("                      .MMMMMMMMMMMIMMMM.MM.MMMMMMMMMMMMM.MM MMMMMMMMMMMMMMMM.                      ");
+puts("                    MMMMMMMMMMMMMM MMMM MMMMMMMMMMMMMMMMMMM MMMM.MMMMMMMMMMMMMM                    ");
+puts("                ..MMMMMMMMMMMMMMMMM:MMMM:MM MMMMMMMMMMM MMHMMMMHMMMMMMMMMMMMMMMMM.                 ");
+puts("              MMMMMMMMMMMMMMMMMMMMM MMMMMMMMM IMMMMMI MMMMMMMMM MMMMMMMMMMMMMMMMMMMMM              ");
+puts("        .MMMMMMMMMMMMMMMMMMMMMMMMMMM MMMMM.MMMMMMMMMMMMM MMMMM MMMMMMMMMMMMMMMMMMMMMMMMMMM.        ");
+puts("MMMMM.    MMMMMMMMMMMMMMMMMMM MMMMMM.MMMMMMMMMMMMMMMMMMMHMMMMM.MMMMMM MMMMMMMMMMMMMMMMMMM    .MMMMM");
+puts("MMMMMMMMM  :MMMMMMMMMMMMMMMMMMM MMMMM MMIMMMMMMMMMMMMMMMMMMMM MMMMM MMMMMMMMMMMMMMMMMMMH  IMMMMMMMM");
+puts("MMMMMMMMMM..MMMMMMMMMMMMMMMMMMMM MMMMM MMMMM.MMMMMMMMM.MMMMM MMMMM MMMMMMMMMMMMMMMMMMMM. MMMMMMMMMM");
+puts("MMMMMMMMMMM MMMMMMMMMMMMMMMMMMMMMM MMMIMMMMMMM MMMMM MMMMMMM:MMM.MMMMMMMMMMMMMMMMMMMMMM MMMMMMMMMMM");
+
+attendre(3);
+Couleur(0,4);
+FixePosCurseur(36,22);
+puts("       ");
+FixePosCurseur(35,23);
+puts("         ");
+FixePosCurseur(36,24);
+puts("       ");
+
+FixePosCurseur(56,22);
+puts("       ");
+FixePosCurseur(55,23);
+puts("         ");
+FixePosCurseur(56,24);
+puts("       ");
+
+Couleur(15,0);
+attendre(2);
+
 }

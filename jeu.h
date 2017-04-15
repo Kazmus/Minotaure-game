@@ -5,6 +5,8 @@
 
 void attendre (unsigned int secs);
 
+int changementNom(char nom[30]);
+
 int choixMenu();
 
 int choixOptions();

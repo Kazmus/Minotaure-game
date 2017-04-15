@@ -11,17 +11,16 @@
 int main()
 {
     system("mode con lines=50 cols=100");
-    int choix,mode,nombrePas = 0;
+    int choix,choix2,mode,nombrePas = 0;
     int i,x,y,x2,y2,x3,y3;            // on declare un entier x et y
-    char joueur = 'T',minotaure = 'M',princesse = 'P';
+    char joueur[20] = "Thesee",minotaure = 'M',princesse[20] = "Arianne";
     char touche;        // on declare un char touche
     srand(time(NULL));
+    afficheMino();
 
     while(1)
     {
-        FixePosCurseur(32,12);
-        puts("CHARGEMENT"); // pseudo chargement
-        //attendre(3);          // qui dure 3 sec
+
         effaceEcran();      // efface l'ecran
         choix = choixMenu();    // on fait appel a la fonction qui renvoi le choix du menu
 
@@ -31,14 +30,28 @@ int main()
             {
                 effaceEcran();      // on efface l'ecran
                 introHistoire();
-                attendre(5);            // on rentre la touche
                 effaceEcran();
                 break;
             }
+
             case 'o':      // si choix => o
             {
-                effaceEcran();      // on efface l'ecran
-                choixOptions();
+                while(1)
+                {
+                    effaceEcran();      // on efface l'ecran
+                    choix2 = choixOptions();
+
+                    if (choix2 == 'h')
+                    {
+                        joueur[20] = changementNom(joueur);
+                    }
+                    if (choix2 == 'p')
+                    {
+                        princesse[20] = changementNom(princesse);
+                    }
+                    if (choix2 == 27)
+                        break;
+                }
                 break;
             }
 
@@ -50,6 +63,10 @@ int main()
                 choix = selection();             // on efface l'ecran
                 effaceEcran();
                 affichelaby(choix);             // affichage labyrinthe
+                FixePosCurseur(15,0);
+                printf("%s", joueur);
+                FixePosCurseur(76,0);
+                printf("%s", princesse);
                 Couleur(14,0);
                 FixePosCurseur(23,25);        // on fixe le curseur tout en haut a gauche de la console
                 puts("Utilisez les touches (z) pour monter, (s) pour descendre");
@@ -62,34 +79,34 @@ int main()
                 {
                     do // positionne aleatoirement notre heros
                     {
-                        x = (rand() % (19 - 1 + 1) + 38);
-                        y = (rand() % (18 - 1 + 1) + 1);
+                        x = (rand() % (20 + 1) + 40);
+                        y = (rand() % (19 + 1));
                         i = collision(x,y,choix);
                     }
                     while (i != 0);
 
                     do // positionne aleatoirement notre minotaure
                     {
-                        x2 = (rand() % (19 - 1 + 1) + 38);
-                        y2 = (rand() % (18 - 1 + 1) + 1);
+                        x2 = (rand() % (20 + 1) + 40);
+                        y2 = (rand() % (19 + 1));
                         i = collision(x2,y2,choix);
                     }
-
                     while (i != 0);
+
                     do // positionne aleatoirement notre princesse
                     {
-                        x3 = (rand() % (19 - 1 + 1) + 38);
-                        y3 = (rand() % (18 - 1 + 1) + 1);
+                        x3 = (rand() % (20 + 1) + 40);
+                        y3 = (rand() % (19 + 1));
                         i = collision(x3,y3,choix);
                     }
 
                     while (i != 0);
                 }
-                while (x != x2 && y != y2);
+                while ((x == x2 && y == y2) || (x == x3 && y == y3) || (x2 == x3 && y2 ==y3));
 
                 Couleur(10,0);
                 FixePosCurseur(x,y);        // on fixe le cusreur avec les valeurs qu'on a mis dans la ligne precedente
-                printf("%c", joueur);                // on affiche la 1ere lettre de notre heros sur la position du curseur
+                printf("%c", joueur[0]);                // on affiche la 1ere lettre de notre heros sur la position du curseur
                 Couleur(15,0);
 
                 Couleur(12,0);
@@ -99,7 +116,7 @@ int main()
 
                 Couleur(13,0);
                 FixePosCurseur(x3,y3);
-                printf("%c", princesse);
+                printf("%c", princesse[0]);
                 Couleur(15,0);
 
 
@@ -193,9 +210,18 @@ int main()
                             break;
                         }
 
+                        if (x == x3 && y == y3)
+                        {
+                            win();
+                            afficheScore(nombrePas);
+                            nombrePas = 0;
+                            attendre(5);
+                            break;
+                        }
+
                         Couleur(10,0);
                         FixePosCurseur(x,y);        // pour chaque deplacement l'initiale du heros ce deplace egalement vers la direction qu'on a appuyer
-                        printf("%c", joueur);
+                        printf("%c", joueur[0]);
                         Couleur(15,0);
 
                         //MODE DEUX JOUEURS---------------------------------------------------/////////////////////////////////////////////////////////////////////////
@@ -358,7 +384,6 @@ int main()
                         }
                     }
                 }
-        /// Ici faudra rajouter : gestion du score, de la rencontre Thésée et Ariane
                 break;
             }
             case 27:

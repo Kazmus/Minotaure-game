@@ -8,6 +8,18 @@ void attendre(unsigned int secs)
     while (time(0) < retTime);               // boucle jusque obtenir le temps
 }
 
+int changementNom(char nom[20])
+{
+
+    effaceEcran();
+    FixePosCurseur(36,19);
+    printf("Veuillez choisir votre nom");
+    FixePosCurseur(36,21);
+    scanf("%s", nom);
+
+    return nom;
+}
+
 
 // RENVOI UN CHOIX DU MENU
 int choixMenu()
@@ -74,9 +86,11 @@ int choixOptions()
     switch(choix)
     {
         case 'h':
+            choix = 'h';
         break;
 
         case 'p':
+            choix = 'p';
         break;
 
         case 27:
