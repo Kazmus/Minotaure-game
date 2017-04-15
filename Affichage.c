@@ -622,6 +622,9 @@ void affichelaby(int i) // on prend en parametre le choix qu'on a fait au preala
 void gameOver()
 {
     effaceEcran();
+    afficheMino2();
+    attendre(3);
+    effaceEcran();
     FixePosCurseur(46,22);
     printf("GAME OVER");
 }
@@ -782,4 +785,92 @@ puts("       ");
 Couleur(15,0);
 attendre(2);
 
+}
+
+void afficheHero()
+{
+    Couleur(10,0);
+    puts("              .:I:MM.");
+    puts("             MMMMI:HMH");
+    puts("              MM:M MMM");
+    puts("               MH:.:MM");
+    puts("                :HMMM:H");
+    puts("               MMMMMMMMHM");
+    puts("              MMIMMMMMM");
+    puts("            MMMMMMMMMMHM");
+    puts("         HMMMMMMMMMMM :I");
+    puts("        MMMMMMMMMIMM. I:");
+    puts("        MMMMMMMMMMMMMMMI.");
+    puts("         MMMMMMMMMMMMMMM.");
+    puts("          MMMMMMMMMMM: MI.");
+    puts("          .MMMMMMM MI:   I .");
+    puts("           .M I:H .MH   . I .");
+    puts("               ::. M:I     .:");
+    puts("              MMMM MMMM");
+    puts("               MMM .MMMM");
+    puts("             .MMM  MMMM");
+    puts("             MHHMMM  MMM");
+    puts("            MMMM    MMMM");
+    Couleur(15,0);
+}
+
+
+void afficheMino2()
+{
+    FixePosCurseur(27,10);
+    puts("    ...:                          M.");
+    FixePosCurseur(27,11);
+    puts("   H..M                             M.M");
+    FixePosCurseur(27,12);
+    puts("  :...                               M..");
+    FixePosCurseur(27,13);
+    puts("  :...                               M..:");
+    FixePosCurseur(27,14);
+    puts("  I...:                              M...");
+    FixePosCurseur(27,15);
+    puts("  :.....H.                         .M..:I");
+    FixePosCurseur(27,16);
+    puts("  M.:......MMMMMH                 M:....:");
+    FixePosCurseur(27,17);
+    puts("   :M:....MMMMMMMMMMMMMMMMM......H....I.M");
+    FixePosCurseur(27,18);
+    puts("    HM:..:MMMMMMMMMMMMMMMMH..........M.:");
+    FixePosCurseur(27,19);
+    puts("   M. IM.MMMMMMMMMMMMMMMMMM.....:.I.:HM");
+    FixePosCurseur(27,20);
+    puts("    MMMMMMMMMMMMMMMMMMMMMMMMM..IH.M:M    M");
+    FixePosCurseur(27,21);
+    puts("     MMMMMMMMMMMMMMMMMMMMMMMMH:MMMMMM:HMMM");
+    FixePosCurseur(27,22);
+    puts("      MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM");
+    FixePosCurseur(27,23);
+    puts("       MMMMMHHMMMMMMM..MMHMHMMMMMMMMMMMM.");
+    FixePosCurseur(27,24);
+    puts("       .MMMMMMMMMMMMMMMMMMMHMMMMMMMMMM");
+    FixePosCurseur(27,25);
+    puts("      MMMMMMMMMMMMMMMMMMMMMMMMMMMMM");
+    FixePosCurseur(27,26);
+    puts("     MMMMMHMMMMMMMMMMMMMMMMMHM");
+    FixePosCurseur(27,27);
+    puts("     IMMMMMMHIMMMMMMMMMMMMMMMM");
+    FixePosCurseur(27,28);
+    puts("    :HMMMMMMMIIMMM:IHMMMMMMMMM");
+    FixePosCurseur(27,29);
+    puts("    IMMMMMMMMIIMM:.MMMMMMMMMM");
+    FixePosCurseur(27,30);
+    puts("    IIM..:.MM:HM..MHHMMMMMMM");
+    FixePosCurseur(27,31);
+    puts("    MIII...:IIM.:HHHHMMMMMM");
+    FixePosCurseur(27,32);
+    puts("      MIMMMIMM..:IIHH:MMMM");
+    FixePosCurseur(27,33);
+    puts("HA             .:MIIM.MMMM");
+    FixePosCurseur(27,34);
+    puts("  HA          .:MMIM.IMMM.");
+    FixePosCurseur(27,35);
+    puts("    HA        M:MIM:MMMMM");
+    FixePosCurseur(27,36);
+    puts("      HA      :.:.:HIMMMM");
+    FixePosCurseur(27,37);
+    puts("        HA    MMMMMMMMMM");
 }

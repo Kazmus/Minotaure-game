@@ -127,4 +127,7 @@ void afficheScore(int nombrePas);
 
 void afficheMino();
 
+void afficheMino2();
+
+void afficheHero();
 //=========================================================================//

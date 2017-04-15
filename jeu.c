@@ -15,7 +15,7 @@ void attendre(unsigned int secs)    // on prend en parametre la ou les seconde(s
 //         Fonction qui permet de changer le nom des personnages           //
 //=========================================================================//
 
-int changementNom(char nom[20])     // on prend en parametre le personnage concerner
+int changementNom(char nom[15])     // on prend en parametre le personnage concerner
 {
 
     effaceEcran();

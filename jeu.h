@@ -13,7 +13,7 @@ void attendre (unsigned int secs);
 //         Fonction qui permet de changer le nom des personnages           //
 //=========================================================================//
 
-int changementNom(char nom[30]);
+int changementNom(char nom[15]);
 
 //=========================================================================//
 //            Fonction qui affiche et retourne le choix du menu            //

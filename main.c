@@ -15,7 +15,7 @@ int main()
     // Declaration de divers variables qu'on utilisera dans le main
     int choix,choix2,mode,nombrePas = 0;    // Variables pour les differend retour de choix ainsi que le nombre de pas initialiser a 0
     int i,x,y,x2,y2,x3,y3;           // Les differentes coordonnees pour chaque personnage du jeu ainsi que un i pour la collision
-    char joueur[20] = "Thesee",minotaure = 'M',princesse[20] = "Arianne";       // Creation de tableau pour les noms des perso sauf le minotaure qui garde juste son initial
+    char joueur[15] = "Thesee",minotaure = 'M',princesse[15] = "Arianne";       // Creation de tableau pour les noms des perso sauf le minotaure qui garde juste son initial
     char touche;        // On declare une variable touche pour les appel de clavier
     srand(time(NULL));      // On initialise la fonction rand
     afficheMino();          // On affiche un jolie minotaure
@@ -45,11 +45,11 @@ int main()
 
                     if (choix2 == 'h')          //si choix ==> h
                     {
-                        joueur[20] = changementNom(joueur);     //on fait appel a la fonction qui permet de changer le nom et on le retourne
+                        joueur[15] = changementNom(joueur);     //on fait appel a la fonction qui permet de changer le nom et on le retourne
                     }
                     if (choix2 == 'p')          //si choix ==> p
                     {
-                        princesse[20] = changementNom(princesse);       //on fait appel a la fonction qui permet de changer le nom et on le retourne
+                        princesse[15] = changementNom(princesse);       //on fait appel a la fonction qui permet de changer le nom et on le retourne
                     }
                     if (choix2 == 27)       // si choix ==> 27 (escape)
                         break;              // on casse
@@ -66,10 +66,14 @@ int main()
                 effaceEcran();              // on efface l'ecran
                 affichelaby(choix);         // affichage du labyrinthe d'apres le choix
 
-                FixePosCurseur(15,0);       // on fixe le curseur sur la console
-                printf("%s", joueur);       // et on affiche le nom du joueur(hero)
-                FixePosCurseur(76,0);       // on fixe le curseur sur la console
-                printf("%s", princesse);    // et on affiche le nom de la princesse
+                FixePosCurseur(11,1);       // on fixe le curseur sur la console
+                printf("|-- %s --|", joueur);       // et on affiche le nom du joueur(hero)
+                FixePosCurseur(72,1);       // on fixe le curseur sur la console
+                printf("|-- %s --|", princesse);    // et on affiche le nom de la princesse
+
+                FixePosCurseur(0,3);
+                afficheHero();
+                affichePrincesse();
 
                 Couleur(14,0);              // on met une couleur jaune pour tout ce qui est informations pour l'utilisateur
                 FixePosCurseur(41,24);      // on affiche en bas du labyrinthe les instructions de jeu et si on a choisi le mode deux joueur affiche egalement des info supplementaires
