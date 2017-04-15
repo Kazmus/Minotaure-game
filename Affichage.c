@@ -98,11 +98,16 @@ void effaceEcran()
 
 }
 
+//=========================================================================//
+// Fonction qui permet de selectionner un labyrinthe en le faisant defiler //
+//=========================================================================//
+
 int selection()
 {
     char choixDefilement,mur = 219;
     int defilement = 1,choix,x,y;
 
+    // affiche les commandes
     Couleur(14,0);
     FixePosCurseur(35,25);
     puts("Veuillez choisir un labyrinthe");
@@ -112,434 +117,493 @@ int selection()
     puts("ESPACE pour valider le choix");
     Couleur(15,0);
 
-    while (defilement <= 10 && defilement >= 1)
+    while (defilement <= 10 && defilement >= 1) // tant que le defilement est plus petit ou egal a 10 et plus grand ou egal a 1
     {
-        while (choixDefilement != 'q' || choixDefilement != 'd')
+        while (choixDefilement != 'q' || choixDefilement != 'd')  // et tant que on appuye pas sur les touches demander
         {
-            if(defilement == 1)
+            // Pour chaque deplacement on verifie et affiche le tableau de ca valeur respective
+            switch(defilement)
             {
-                for (y=0;y<=19;y++)
+                case 1:
                 {
-                    FixePosCurseur(40,y);
-                    for (x=0;x<=20;x++)
+                    // on affiche le tableau
+                    for (y=0;y<=19;y++)
                     {
-                        if (laby1[y][x] == 0)
-                        printf(" ");
-                        if (laby1[y][x] == 1)
-                        printf("%c", mur);
+                        FixePosCurseur(40,y); // permet de afficher le tableau au centre de la console
+                        for (x=0;x<=20;x++)
+                        {
+                            if (laby1[y][x] == 0)
+                            printf(" ");
+                            if (laby1[y][x] == 1)
+                            printf("%c", mur);
+                        }
+                        printf("\n");
                     }
-                    printf("\n");
-                }
-            }
-            if(defilement == 2)
-            {
-                for (y=0;y<=19;y++)
-                {
-                    FixePosCurseur(40,y);
-                    for (x=0;x<=20;x++)
-                    {
-                        if (laby2[y][x] == 0)
-                        printf(" ");
-                        if (laby2[y][x] == 1)
-                        printf("%c", mur);
-                    }
-                    printf("\n");
-                }
-            }
-            if(defilement == 3)
-            {
-                for (y=0;y<=19;y++)
-                {
-                    FixePosCurseur(40,y);
-                    for (x=0;x<=20;x++)
-                    {
-                        if (laby3[y][x] == 0)
-                        printf(" ");
-                        if (laby3[y][x] == 1)
-                        printf("%c", mur);
-                    }
-                    printf("\n");
-                }
-            }
-            if(defilement == 4)
-            {
-                for (y=0;y<=19;y++)
-                {
-                    FixePosCurseur(40,y);
-                    for (x=0;x<=20;x++)
-                    {
-                        if (laby4[y][x] == 0)
-                        printf(" ");
-                        if (laby4[y][x] == 1)
-                        printf("%c", mur);
-                    }
-                    printf("\n");
-                }
-            }
-            if(defilement == 5)
-            {
-                for (y=0;y<=19;y++)
-                {
-                    FixePosCurseur(40,y);
-                    for (x=0;x<=20;x++)
-                    {
-                        if (laby5[y][x] == 0)
-                        printf(" ");
-                        if (laby5[y][x] == 1)
-                        printf("%c", mur);
-                    }
-                    printf("\n");
-                }
-            }
-            if(defilement == 6)
-            {
-                for (y=0;y<=19;y++)
-                {
-                    FixePosCurseur(40,y);
-                    for (x=0;x<=20;x++)
-                    {
-                        if (laby6[y][x] == 0)
-                        printf(" ");
-                        if (laby6[y][x] == 1)
-                        printf("%c", mur);
-                    }
-                    printf("\n");
-                }
-            }
-            if(defilement == 7)
-            {
-                for (y=0;y<=19;y++)
-                {
-                    FixePosCurseur(40,y);
-                    for (x=0;x<=20;x++)
-                    {
-                        if (laby7[y][x] == 0)
-                        printf(" ");
-                        if (laby7[y][x] == 1)
-                        printf("%c", mur);
-                    }
-                    printf("\n");
-                }
-            }
-            if(defilement == 8)
-            {
-                for (y=0;y<=19;y++)
-                {
-                    FixePosCurseur(40,y);
-                    for (x=0;x<=20;x++)
-                    {
-                        if (laby8[y][x] == 0)
-                        printf(" ");
-                        if (laby8[y][x] == 1)
-                        printf("%c", mur);
-                    }
-                    printf("\n");
-                }
-            }
-            if(defilement == 9)
-            {
-                for (y=0;y<=19;y++)
-                {
-                    FixePosCurseur(40,y);
-                    for (x=0;x<=20;x++)
-                    {
-                        if (laby9[y][x] == 0)
-                        printf(" ");
-                        if (laby9[y][x] == 1)
-                        printf("%c", mur);
-                    }
-                    printf("\n");
-                }
-            }
-            if(defilement == 10)
-            {
-                for (y=0;y<=19;y++)
-                {
-                    FixePosCurseur(40,y);
-                    for (x=0;x<=20;x++)
-                    {
-                        if (laby10[y][x] == 0)
-                        printf(" ");
-                        if (laby10[y][x] == 1)
-                        printf("%c", mur);
-                    }
-                    printf("\n");
-                }
-            }
-            choixDefilement = getch();
-            if (choixDefilement == 'q')
-            {
-                if (defilement == 1)
-                {
                     break;
                 }
-                defilement--;
-                effaceEcran();
-                Couleur(14,0);
-                FixePosCurseur(35,25);
-                puts("Veuillez choisir un labyrinthe");
-                FixePosCurseur(31,26);
-                puts("Defiler les labyrinthes avec (q) et (d)");
-                FixePosCurseur(36,27);
-                puts("ESPACE pour valider le choix");
-                FixePosCurseur(0,0);
-                Couleur(15,0);
-            }
-            if (choixDefilement == 'd')
-            {
-                if (defilement == 10)
+                case 2:
                 {
+                    for (y=0;y<=19;y++)
+                    {
+                        FixePosCurseur(40,y);
+                        for (x=0;x<=20;x++)
+                        {
+                            if (laby2[y][x] == 0)
+                            printf(" ");
+                            if (laby2[y][x] == 1)
+                            printf("%c", mur);
+                        }
+                        printf("\n");
+                    }
                     break;
                 }
-                defilement++;
-                effaceEcran();
-                Couleur(14,0);
-                FixePosCurseur(35,25);
-                puts("Veuillez choisir un labyrinthe");
-                FixePosCurseur(31,26);
-                puts("Defiler les labyrinthes avec (q) et (d)");
-                FixePosCurseur(36,27);
-                puts("ESPACE pour valider le choix");
-                FixePosCurseur(0,0);
-                Couleur(15,0);
+                case 3:
+                {
+                    for (y=0;y<=19;y++)
+                    {
+                        FixePosCurseur(40,y);
+                        for (x=0;x<=20;x++)
+                        {
+                            if (laby3[y][x] == 0)
+                            printf(" ");
+                            if (laby3[y][x] == 1)
+                            printf("%c", mur);
+                        }
+                        printf("\n");
+                    }
+                    break;
+                }
+                case 4:
+                {
+                    for (y=0;y<=19;y++)
+                    {
+                        FixePosCurseur(40,y);
+                        for (x=0;x<=20;x++)
+                        {
+                            if (laby4[y][x] == 0)
+                            printf(" ");
+                            if (laby4[y][x] == 1)
+                            printf("%c", mur);
+                        }
+                        printf("\n");
+                    }
+                    break;
+                }
+                case 5:
+                {
+                    for (y=0;y<=19;y++)
+                    {
+                        FixePosCurseur(40,y);
+                        for (x=0;x<=20;x++)
+                        {
+                            if (laby5[y][x] == 0)
+                            printf(" ");
+                            if (laby5[y][x] == 1)
+                            printf("%c", mur);
+                        }
+                        printf("\n");
+                    }
+                    break;
+                }
+                case 6:
+                {
+                    for (y=0;y<=19;y++)
+                    {
+                        FixePosCurseur(40,y);
+                        for (x=0;x<=20;x++)
+                        {
+                            if (laby6[y][x] == 0)
+                            printf(" ");
+                            if (laby6[y][x] == 1)
+                            printf("%c", mur);
+                        }
+                        printf("\n");
+                    }
+                    break;
+                }
+                case 7:
+                {
+                    for (y=0;y<=19;y++)
+                    {
+                        FixePosCurseur(40,y);
+                        for (x=0;x<=20;x++)
+                        {
+                            if (laby7[y][x] == 0)
+                            printf(" ");
+                            if (laby7[y][x] == 1)
+                            printf("%c", mur);
+                        }
+                        printf("\n");
+                    }
+                    break;
+                }
+                case 8:
+                {
+                    for (y=0;y<=19;y++)
+                    {
+                        FixePosCurseur(40,y);
+                        for (x=0;x<=20;x++)
+                        {
+                            if (laby8[y][x] == 0)
+                            printf(" ");
+                            if (laby8[y][x] == 1)
+                            printf("%c", mur);
+                        }
+                        printf("\n");
+                    }
+                    break;
+                }
+                case 9:
+                {
+                    for (y=0;y<=19;y++)
+                    {
+                        FixePosCurseur(40,y);
+                        for (x=0;x<=20;x++)
+                        {
+                            if (laby9[y][x] == 0)
+                            printf(" ");
+                            if (laby9[y][x] == 1)
+                            printf("%c", mur);
+                        }
+                        printf("\n");
+                    }
+                    break;
+                }
+                case 10:
+                {
+                    for (y=0;y<=19;y++)
+                    {
+                        FixePosCurseur(40,y);
+                        for (x=0;x<=20;x++)
+                        {
+                            if (laby10[y][x] == 0)
+                            printf(" ");
+                            if (laby10[y][x] == 1)
+                            printf("%c", mur);
+                        }
+                        printf("\n");
+                    }
+                    break;
+                }
             }
-            if (choixDefilement == 32)
+
+            choixDefilement = getch();          // on defile avec les touches sans passer par enter
+
+            switch(choixDefilement)
             {
-                choix = defilement;
-                effaceEcran();
-                FixePosCurseur(0,0);
-                return choix;
+                // GAUCHE
+                case 'q':
+                {
+                    if (defilement == 1)        // si deja a 1 ne fait rien
+                    {
+                        break;
+                    }
+                    defilement--;               // on fait - 1 dans la variable
+                    effaceEcran();
+                    Couleur(14,0);              // on re-affiche les commandes pour chaque deplacment
+                    FixePosCurseur(35,25);
+                    puts("Veuillez choisir un labyrinthe");
+                    FixePosCurseur(31,26);
+                    puts("Defiler les labyrinthes avec (q) et (d)");
+                    FixePosCurseur(36,27);
+                    puts("ESPACE pour valider le choix");
+                    FixePosCurseur(0,0);
+                    Couleur(15,0);
+                    break;
+                }
+                // DROITE
+                case 'd':
+                {
+                    if (defilement == 10)       // si deja a 10 ne fait rien
+                    {
+                        break;
+                    }
+                    defilement++;               // on fait + 1 dans la variable
+                    effaceEcran();
+                    Couleur(14,0);              // on re-affiche les commandes pour chaque deplacment
+                    FixePosCurseur(35,25);
+                    puts("Veuillez choisir un labyrinthe");
+                    FixePosCurseur(31,26);
+                    puts("Defiler les labyrinthes avec (q) et (d)");
+                    FixePosCurseur(36,27);
+                    puts("ESPACE pour valider le choix");
+                    FixePosCurseur(0,0);
+                    Couleur(15,0);
+                    break;
+                }
+                case 32:                        // on valide le choix avec ESPACE
+                {
+                    choix = defilement;
+                    effaceEcran();
+                  //  FixePosCurseur(0,0);
+                    return choix;
+                }
             }
         }
     }
 }
 
-int collision(int x,int y,int i)
+//=========================================================================//
+// Fonction qui verifie s'il y a un obstacle et retourne la valeur 0 ou 1  //
+//=========================================================================//
+
+int collision(int x,int y,int i) // on prend en parametre les coordonnes x,y et le choix(i) du labyrinthe qu'on avait choisi auparavant
 {
     int obstacle;
-    x = x - 40;
+    x = x - 40; // on fait comme si les labyrinthe etaient aux coordonnees 0,0 pour nous faciliter la tache
 
-    if (i == 1)
+    switch(i)   // en fonction du labyrinthe qu'on avait choisi, on verifie les murs du labyrinthe concerner
     {
-        if (laby1[y][x] == 0)
+        case 1:
         {
-            obstacle = 0;
+            if (laby1[y][x] == 0)
+            {
+                obstacle = 0;
+            }
+            if (laby1[y][x] == 1)
+            {
+                obstacle = 1;
+            }
+            break;
         }
-        if (laby1[y][x] == 1)
+        case 2:
         {
-            obstacle = 1;
+            if (laby2[y][x] == 0)
+            {
+                obstacle = 0;
+            }
+            if (laby2[y][x] == 1)
+            {
+                obstacle = 1;
+            }
+            break;
+        }
+        case 3:
+        {
+            if (laby3[y][x] == 0)
+            {
+                obstacle = 0;
+            }
+            if (laby3[y][x] == 1)
+            {
+                obstacle = 1;
+            }
+            break;
+        }
+        case 4:
+        {
+            if (laby4[y][x] == 0)
+            {
+                obstacle = 0;
+            }
+            if (laby4[y][x] == 1)
+            {
+                obstacle = 1;
+            }
+            break;
+        }
+        case 5:
+        {
+            if (laby5[y][x] == 0)
+            {
+                obstacle = 0;
+            }
+            if (laby5[y][x] == 1)
+            {
+                obstacle = 1;
+            }
+            break;
+        }
+        case 6:
+        {
+            if (laby6[y][x] == 0)
+            {
+                obstacle = 0;
+            }
+            if (laby6[y][x] == 1)
+            {
+                obstacle = 1;
+            }
+            break;
+        }
+        case 7:
+        {
+            if (laby7[y][x] == 0)
+            {
+                obstacle = 0;
+            }
+            if (laby7[y][x] == 1)
+            {
+                obstacle = 1;
+            }
+            break;
+        }
+        case 8:
+        {
+            if (laby8[y][x] == 0)
+            {
+                obstacle = 0;
+            }
+            if (laby8[y][x] == 1)
+            {
+                obstacle = 1;
+            }
+            break;
+        }
+        case 9:
+        {
+            if (laby9[y][x] == 0)
+            {
+                obstacle = 0;
+            }
+            if (laby9[y][x] == 1)
+            {
+                obstacle = 1;
+            }
+            break;
+        }
+        case 10:
+        {
+            if (laby10[y][x] == 0)
+            {
+                obstacle = 0;
+            }
+            if (laby10[y][x] == 1)
+            {
+                obstacle = 1;
+            }
+            break;
         }
     }
-    if (i == 2)
-    {
-        if (laby2[y][x] == 0)
-        {
-            obstacle = 0;
-        }
-        if (laby2[y][x] == 1)
-        {
-            obstacle = 1;
-        }
-    }
-    if (i == 3)
-    {
-        if (laby3[y][x] == 0)
-        {
-            obstacle = 0;
-        }
-        if (laby3[y][x] == 1)
-        {
-            obstacle = 1;
-        }
-    }
-    if (i == 4)
-    {
-        if (laby4[y][x] == 0)
-        {
-            obstacle = 0;
-        }
-        if (laby4[y][x] == 1)
-        {
-            obstacle = 1;
-        }
-    }
-    if (i == 5)
-    {
-        if (laby5[y][x] == 0)
-        {
-            obstacle = 0;
-        }
-        if (laby5[y][x] == 1)
-        {
-            obstacle = 1;
-        }
-    }
-    if (i == 6)
-    {
-        if (laby6[y][x] == 0)
-        {
-            obstacle = 0;
-        }
-        if (laby6[y][x] == 1)
-        {
-            obstacle = 1;
-        }
-    }
-    if (i == 7)
-    {
-        if (laby7[y][x] == 0)
-        {
-            obstacle = 0;
-        }
-        if (laby7[y][x] == 1)
-        {
-            obstacle = 1;
-        }
-    }
-    if (i == 8)
-    {
-        if (laby8[y][x] == 0)
-        {
-            obstacle = 0;
-        }
-        if (laby8[y][x] == 1)
-        {
-            obstacle = 1;
-        }
-    }
-    if (i == 9)
-    {
-        if (laby9[y][x] == 0)
-        {
-            obstacle = 0;
-        }
-        if (laby9[y][x] == 1)
-        {
-            obstacle = 1;
-        }
-    }
-    if (i == 10)
-    {
-        if (laby10[y][x] == 0)
-        {
-            obstacle = 0;
-        }
-        if (laby10[y][x] == 1)
-        {
-            obstacle = 1;
-        }
-    }
-    return obstacle;
+    return obstacle; // on retourne 0 si pas de mur ou 1 si c'est le cas
 }
 
-void affichelaby(int i)
+//=========================================================================//
+//                Fonction qui affiche le labyrinthe choisi                //
+//=========================================================================//
+
+void affichelaby(int i) // on prend en parametre le choix qu'on a fait au prealable
 {
-    int x,y,laby[hauteurLaby][largeurLaby];
+    int x,y,laby[hauteurLaby][largeurLaby]; // on va creer un tableau qui servira pour l'affichage
     char mur = 219;
 
-    if (i == 1)
+    switch(i)    // en fonction du labyrinthe qu'on avait choisi, on copie le labyrinthe choisi dans un tableau vide qu'on a declarer avant avec la meme taille
     {
-        for (y=0;y<=19;y++)
+        case 1:
         {
-            for (x=0;x<=20;x++)
+            for (y=0;y<=19;y++)
             {
-                laby[y][x] = laby1[y][x];
+                for (x=0;x<=20;x++)
+                {
+                    laby[y][x] = laby1[y][x];
+                }
             }
+            break;
+        }
+        case 2:
+        {
+            for (y=0;y<=19;y++)
+            {
+                for (x=0;x<=20;x++)
+                {
+                    laby[y][x] = laby2[y][x];
+                }
+            }
+            break;
+        }
+        case 3:
+        {
+            for (y=0;y<=19;y++)
+            {
+                for (x=0;x<=20;x++)
+                {
+                    laby[y][x] = laby3[y][x];
+                }
+            }
+            break;
+        }
+        case 4:
+        {
+            for (y=0;y<=19;y++)
+            {
+                for (x=0;x<=20;x++)
+                {
+                    laby[y][x] = laby4[y][x];
+                }
+            }
+            break;
+        }
+        case 5:
+        {
+            for (y=0;y<=19;y++)
+            {
+                for (x=0;x<=20;x++)
+                {
+                    laby[y][x] = laby5[y][x];
+                }
+            }
+            break;
+        }
+        case 6:
+        {
+            for (y=0;y<=19;y++)
+            {
+                for (x=0;x<=20;x++)
+                {
+                    laby[y][x] = laby6[y][x];
+                }
+            }
+            break;
+        }
+        case 7:
+        {
+            for (y=0;y<=19;y++)
+            {
+                for (x=0;x<=20;x++)
+                {
+                    laby[y][x] = laby7[y][x];
+                }
+            }
+            break;
+        }
+        case 8:
+        {
+            for (y=0;y<=19;y++)
+            {
+                for (x=0;x<=20;x++)
+                {
+                    laby[y][x] = laby8[y][x];
+                }
+            }
+            break;
+        }
+        case 9:
+        {
+            for (y=0;y<=19;y++)
+            {
+                for (x=0;x<=20;x++)
+                {
+                    laby[y][x] = laby9[y][x];
+                }
+            }
+            break;
+        }
+        case 10:
+        {
+            for (y=0;y<=19;y++)
+            {
+                for (x=0;x<=20;x++)
+                {
+                    laby[y][x] = laby10[y][x];
+                }
+            }
+            break;
         }
     }
-    if (i == 2)
+
+    for (y=0;y<=19;y++)             // une fois qu'on a copier le tableau choisi on l'affiche
     {
-        for (y=0;y<=19;y++)
-        {
-            for (x=0;x<=20;x++)
-            {
-                laby[y][x] = laby2[y][x];
-            }
-        }
-    }
-    if (i == 3)
-    {
-        for (y=0;y<=19;y++)
-        {
-            for (x=0;x<=20;x++)
-            {
-                laby[y][x] = laby3[y][x];
-            }
-        }
-    }
-    if (i == 4)
-    {
-        for (y=0;y<=19;y++)
-        {
-            for (x=0;x<=20;x++)
-            {
-                laby[y][x] = laby4[y][x];
-            }
-        }
-    }
-    if (i == 5)
-    {
-        for (y=0;y<=19;y++)
-        {
-            for (x=0;x<=20;x++)
-            {
-                laby[y][x] = laby5[y][x];
-            }
-        }
-    }
-    if (i == 6)
-    {
-        for (y=0;y<=19;y++)
-        {
-            for (x=0;x<=20;x++)
-            {
-                laby[y][x] = laby6[y][x];
-            }
-        }
-    }
-    if (i == 7)
-    {
-        for (y=0;y<=19;y++)
-        {
-            for (x=0;x<=20;x++)
-            {
-                laby[y][x] = laby7[y][x];
-            }
-        }
-    }
-    if (i == 8)
-    {
-        for (y=0;y<=19;y++)
-        {
-            for (x=0;x<=20;x++)
-            {
-                laby[y][x] = laby8[y][x];
-            }
-        }
-    }
-    if (i == 9)
-    {
-        for (y=0;y<=19;y++)
-        {
-            for (x=0;x<=20;x++)
-            {
-                laby[y][x] = laby9[y][x];
-            }
-        }
-    }
-    if (i == 10)
-    {
-        for (y=0;y<=19;y++)
-        {
-            for (x=0;x<=20;x++)
-            {
-                laby[y][x] = laby10[y][x];
-            }
-        }
-    }
-    for (y=0;y<=19;y++)
-    {
-        FixePosCurseur(40,y);
+        FixePosCurseur(40,y);       // on centre le tableau
         for (x=0;x<=20;x++)
         {
             if (laby[y][x] == 0)
@@ -549,8 +613,11 @@ void affichelaby(int i)
         }
         printf("\n");
     }
-
 }
+
+//=========================================================================//
+//                      Fonction qui affiche la defaite                    //
+//=========================================================================//
 
 void gameOver()
 {
@@ -559,12 +626,20 @@ void gameOver()
     printf("GAME OVER");
 }
 
+//=========================================================================//
+//                     Fonction qui affiche la victoire                    //
+//=========================================================================//
+
 void win()
 {
     effaceEcran();
     FixePosCurseur(30,22);
     printf("Felicitations, vous avez sauve la princesse");
 }
+
+//=========================================================================//
+//                   Fonction qui affiche l'introduction                   //
+//=========================================================================//
 
 void introHistoire()
 {
@@ -609,7 +684,7 @@ void introHistoire()
     printf("Veuillez appuyez sur la touche ESC pour revenir au menu principal");
     Couleur(15,0);
 
-    while (touche != 27)
+    while (touche != 27)    // permet de revenir au menu principal en appuyant sur Escape
     {
         touche = getch();
         if (touche == 27)
@@ -617,7 +692,11 @@ void introHistoire()
     }
 }
 
-void afficheScore(int nombrePas)
+//=========================================================================//
+//                       Fonction qui affiche le score                     //
+//=========================================================================//
+
+void afficheScore(int nombrePas)  // on prend en parametre le nombre de pas total
 {
     int score = 0;
 
@@ -625,6 +704,10 @@ void afficheScore(int nombrePas)
     FixePosCurseur(30,24);
     printf("Vous avez sauve la princesse en %d pas",score);
 }
+
+//=========================================================================//
+//         Fonction qui affiche le superbe et terrifiant minotaure         //
+//=========================================================================//
 
 void afficheMino()
 {
@@ -678,6 +761,8 @@ puts("MMMMMMMMM  :MMMMMMMMMMMMMMMMMMM MMMMM MMIMMMMMMMMMMMMMMMMMMMM MMMMM MMMMMM
 puts("MMMMMMMMMM..MMMMMMMMMMMMMMMMMMMM MMMMM MMMMM.MMMMMMMMM.MMMMM MMMMM MMMMMMMMMMMMMMMMMMMM. MMMMMMMMMM");
 puts("MMMMMMMMMMM MMMMMMMMMMMMMMMMMMMMMM MMMIMMMMMMM MMMMM MMMMMMM:MMM.MMMMMMMMMMMMMMMMMMMMMM MMMMMMMMMMM");
 
+
+                                        // J'ai mis un effet special qui illumine les yeux du minotaure
 attendre(3);
 Couleur(0,4);
 FixePosCurseur(36,22);

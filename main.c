@@ -10,13 +10,15 @@
 
 int main()
 {
-    system("mode con lines=50 cols=100");
-    int choix,choix2,mode,nombrePas = 0;
-    int i,x,y,x2,y2,x3,y3;            // on declare un entier x et y
-    char joueur[20] = "Thesee",minotaure = 'M',princesse[20] = "Arianne";
-    char touche;        // on declare un char touche
-    srand(time(NULL));
-    afficheMino();
+    system("mode con lines=50 cols=100");     //Change la taille de la console
+
+    // Declaration de divers variables qu'on utilisera dans le main
+    int choix,choix2,mode,nombrePas = 0;    // Variables pour les differend retour de choix ainsi que le nombre de pas initialiser a 0
+    int i,x,y,x2,y2,x3,y3;           // Les differentes coordonnees pour chaque personnage du jeu ainsi que un i pour la collision
+    char joueur[20] = "Thesee",minotaure = 'M',princesse[20] = "Arianne";       // Creation de tableau pour les noms des perso sauf le minotaure qui garde juste son initial
+    char touche;        // On declare une variable touche pour les appel de clavier
+    srand(time(NULL));      // On initialise la fonction rand
+    afficheMino();          // On affiche un jolie minotaure
 
     while(1)
     {
@@ -29,48 +31,48 @@ int main()
             case 'i':       // si choix => i
             {
                 effaceEcran();      // on efface l'ecran
-                introHistoire();
-                effaceEcran();
+                introHistoire();    // on affiche la jolie introduction
+                effaceEcran();      // on efface l'ecran
                 break;
             }
 
             case 'o':      // si choix => o
             {
-                while(1)
+                while(1)        // permet de revenir dans les options apres un choix
                 {
                     effaceEcran();      // on efface l'ecran
-                    choix2 = choixOptions();
+                    choix2 = choixOptions();      // on affiche les options et on renvoi le choix
 
-                    if (choix2 == 'h')
+                    if (choix2 == 'h')          //si choix ==> h
                     {
-                        joueur[20] = changementNom(joueur);
+                        joueur[20] = changementNom(joueur);     //on fait appel a la fonction qui permet de changer le nom et on le retourne
                     }
-                    if (choix2 == 'p')
+                    if (choix2 == 'p')          //si choix ==> p
                     {
-                        princesse[20] = changementNom(princesse);
+                        princesse[20] = changementNom(princesse);       //on fait appel a la fonction qui permet de changer le nom et on le retourne
                     }
-                    if (choix2 == 27)
-                        break;
+                    if (choix2 == 27)       // si choix ==> 27 (escape)
+                        break;              // on casse
                 }
-                break;
+                break;          // et on revient au menu principal
             }
 
             case 'n':       // si choix => n
             {
-                effaceEcran();
-                mode = choixMode();
-                effaceEcran();
-                choix = selection();             // on efface l'ecran
-                effaceEcran();
-                affichelaby(choix);             // affichage labyrinthe
+                effaceEcran();              // on efface l'ecran
+                mode = choixMode();         // choix du mode
+                effaceEcran();              // on efface l'ecran
+                choix = selection();        // choix du labyrinthe
+                effaceEcran();              // on efface l'ecran
+                affichelaby(choix);         // affichage du labyrinthe d'apres le choix
 
-                FixePosCurseur(15,0);
-                printf("%s", joueur);
-                FixePosCurseur(76,0);
-                printf("%s", princesse);
+                FixePosCurseur(15,0);       // on fixe le curseur sur la console
+                printf("%s", joueur);       // et on affiche le nom du joueur(hero)
+                FixePosCurseur(76,0);       // on fixe le curseur sur la console
+                printf("%s", princesse);    // et on affiche le nom de la princesse
 
-                Couleur(14,0);
-                FixePosCurseur(41,24);
+                Couleur(14,0);              // on met une couleur jaune pour tout ce qui est informations pour l'utilisateur
+                FixePosCurseur(41,24);      // on affiche en bas du labyrinthe les instructions de jeu et si on a choisi le mode deux joueur affiche egalement des info supplementaires
                 puts("---Commandes hero---");
                 FixePosCurseur(23,25);
                 puts("Utilisez les touches (z) pour monter, (s) pour descendre");
@@ -88,231 +90,247 @@ int main()
                     puts("(j) pour aller à gauche, (l) pour aller à droite");
                 }
 
+                // positionnement aleatoire des differends personnages
                 do
                 {
                     do // positionne aleatoirement notre heros
                     {
                         x = (rand() % (20 + 1) + 40);
                         y = (rand() % (19 + 1));
-                        i = collision(x,y,choix);
+                        i = collision(x,y,choix);   // on verifie s'il y a un mur
                     }
-                    while (i != 0);
+                    while (i != 0); // si mur vrai on recommance
 
                     do // positionne aleatoirement notre minotaure
                     {
                         x2 = (rand() % (20 + 1) + 40);
                         y2 = (rand() % (19 + 1));
-                        i = collision(x2,y2,choix);
+                        i = collision(x2,y2,choix); // on verifie s'il y a un mur
                     }
-                    while (i != 0);
+                    while (i != 0); // si mur vrai on recommance
 
                     do // positionne aleatoirement notre princesse
                     {
                         x3 = (rand() % (20 + 1) + 40);
                         y3 = (rand() % (19 + 1));
-                        i = collision(x3,y3,choix);
+                        i = collision(x3,y3,choix); // on verifie s'il y a un mur
                     }
 
-                    while (i != 0);
+                    while (i != 0); // si mur vrai on recommance
                 }
-                while ((x == x2 && y == y2) || (x == x3 && y == y3) || (x2 == x3 && y2 ==y3));
+                while ((x == x2 && y == y2) || (x == x3 && y == y3) || (x2 == x3 && y2 ==y3)); // jusqua ce que les differents personnages ne sont pas sur la meme case
 
-                Couleur(10,0);
-                FixePosCurseur(x,y);        // on fixe le cusreur avec les valeurs qu'on a mis dans la ligne precedente
-                printf("%c", joueur[0]);                // on affiche la 1ere lettre de notre heros sur la position du curseur
-                Couleur(15,0);
+                // on affiche la 1ere lettre de chaque personnages
+                Couleur(10,0);              // on lui donne une couleur vert clair
+                FixePosCurseur(x,y);        // on prend les coordonnes generer aleatoirement au prealable et on fixe le curseur
+                printf("%c", joueur[0]);    // on prend 1ere valeur du tableau joueur(hero)
 
-                Couleur(12,0);
-                FixePosCurseur(x2,y2);
+                Couleur(12,0);              // on lui donne une couleur rouge clair
+                FixePosCurseur(x2,y2);      // on prend les coordonnes generer aleatoirement au prealable et on fixe le curseur
                 printf("%c", minotaure);
-                Couleur(15,0);
 
-                Couleur(13,0);
-                FixePosCurseur(x3,y3);
-                printf("%c", princesse[0]);
-                Couleur(15,0);
+                Couleur(13,0);              // on donnne une couleur magenta
+                FixePosCurseur(x3,y3);      // on prend les coordonnes generer aleatoirement au prealable et on fixe le curseur
+                printf("%c", princesse[0]); // on prend 1ere valeur du tableau princesse
 
+                Couleur(15,0);              // on remet la couleur par defaut
 
-                FixePosCurseur(0,0);
-
-                while(1)                       // tant que 1
+                while(1)                       // tant que vrai
                 {
                     if(kbhit())                 // si touche enfoncer
                     {
-                        //DELACEMENT JOUEUR UN peu importe quel mode------------------------------------/////////////////////////////////////////////////////////////////////////////////////
+                        //DELACEMENT JOUEUR UN peu importe quel mode------------------------------------///////////////////////////////////////////////////
                         do
                         {
-                            do
+                            do  // on repete jusqua ce que une des touches demander na pas ete appuyer
                             {
-                                touche=getch();             // touche => touche qu'on appuye sans passer par enter
+                                touche=getch();      // touche => touche qu'on appuye sans passer par enter
                             }
                             while(touche != 'z' && touche != 's' && touche != 'q' && touche != 'd' && touche != 27);
 
                             switch(touche)
                             {
-                                case 'z':          // si touche => z
+                                //touche HAUT
+                                case 'z':            // si touche => z
                                 {
+                                    // on verifie s'il y a un obstacle
                                     y--;
                                     i = collision(x,y,choix);
                                     y++;
-                                    if(i == 0)
+                                    if(i == 0)  // si pas d'obstacle le personnage avance sinon ne fait rien
                                     {
-                                        FixePosCurseur(x,y);    // on fait y - 1 a chaque fois qu'on appuye sur z
-                                        printf(" ");
+                                        FixePosCurseur(x,y);
+                                        printf(" ");    // on met un vide sur la case avant que le personnage n'avance
                                         y--;
-                                        nombrePas++;
+                                        nombrePas++;    // on rajoute + 1 pour chaque case
                                     }
-                                    break;
+                                    break;  // on sort de la boucle et on passe le tour
                                 }
-                                case 's':
+                                //touche BAS
+                                case 's':           // si touche => s
                                 {
+                                    // on verifie s'il y a un obstacle
                                     y++;
                                     i = collision(x,y,choix);
                                     y--;
-                                    if(i == 0)
+                                    if(i == 0)  // si pas d'obstacle le personnage avance sinon ne fait rien
                                     {
-                                        FixePosCurseur(x,y);    // on fait y + 1 a chaque fois qu'on appuye sur z
-                                        printf(" ");
+                                        FixePosCurseur(x,y);
+                                        printf(" ");    // on met un vide sur la case avant que le personnage n'avance
                                         y++;
-                                        nombrePas++;
+                                        nombrePas++;    // on rajoute + 1 pour chaque case
                                     }
-                                    break;
+                                    break;  // on sort de la boucle et on passe le tour
                                 }
-                                case 'q':
+                                //touche GAUCHE
+                                case 'q':           // si touche => q
                                 {
+                                    // on verifie s'il y a un obstacle
                                     x--;
                                     i = collision(x,y,choix);
                                     x++;
-                                    if(i == 0)
+                                    if(i == 0)  // si pas d'obstacle le personnage avance sinon ne fait rien
                                     {
-                                        FixePosCurseur(x,y);    // on fait x - 1 a chaque fois qu'on appuye sur z
-                                        printf(" ");
+                                        FixePosCurseur(x,y);
+                                        printf(" ");    // on met un vide sur la case avant que le personnage n'avance
                                         x--;
-                                        nombrePas++;
+                                        nombrePas++;    // on rajoute + 1 pour chaque case
                                     }
-                                    break;
+                                    break;  // on sort de la boucle et on passe le tour
                                 }
-                                case 'd':
+                                // touche DROITE
+                                case 'd':           // si touche => d
                                 {
+                                    // on verifie s'il y a un obstacle
                                     x++;
                                     i = collision(x,y,choix);
                                     x--;
-                                    if(i == 0)
+                                    if(i == 0)  // si pas d'obstacle le personnage avance sinon ne fait rien
                                     {
-                                        FixePosCurseur(x,y);    // on fait x + 1 a chaque fois qu'on appuye sur z
-                                        printf(" ");
+                                        FixePosCurseur(x,y);
+                                        printf(" ");    // on met un vide sur la case avant que le personnage n'avance
                                         x++;
-                                        nombrePas++;
+                                        nombrePas++;    // on rajoute + 1 pour chaque case
                                     }
-                                    break;
+                                    break;  // on sort de la boucle et on passe le tour
                                 }
 
                                 case 27:
-                                break;     // si on appuye sur Esc on casse et quitte
+                                break;     // si on appuye sur Escape on casse
                             }
                         }
-                        while (i == 1);
+                        while (i == 1);    // repete tant que obstacle vrai
 
-                        if (touche == 27)
+                        if (touche == 27)   // et on casse de nouveau et on reviens au menu principal
                             break;
 
-                        if (x == x2 && y == y2)
+                        if (x == x2 && y == y2)     // si la position est la meme que le minotaure
                         {
-                            gameOver();
+                            gameOver();             // on affiche GAME OVER et on casse apres 2 sec pour revenir au menu principal
                             attendre(2);
                             break;
                         }
 
-                        if (x == x3 && y == y3)
+                        if (x == x3 && y == y3)     // si la position est la meme que la princesse
                         {
-                            win();
-                            afficheScore(nombrePas);
-                            nombrePas = 0;
-                            attendre(5);
+                            win();                  // on affiche la victoire
+                            afficheScore(nombrePas);// et on affiche le nombre de pas
+                            nombrePas = 0;          // on remet le nombre de pas a 0 si jamais on recommance la partie
+                            attendre(5);            // attend 5 sec avant de revenir au menu principal
                             break;
                         }
 
+                        // on re-affiche l'initial du personnage apres le deplacement si aucune des conditions anterieur etait vrai
                         Couleur(10,0);
-                        FixePosCurseur(x,y);        // pour chaque deplacement l'initiale du heros ce deplace egalement vers la direction qu'on a appuyer
+                        FixePosCurseur(x,y);
                         printf("%c", joueur[0]);
                         Couleur(15,0);
 
-                        //MODE DEUX JOUEURS---------------------------------------------------/////////////////////////////////////////////////////////////////////////
-                        //DEPLACEMENT JOUEUR DEUX---------------------------------------------/////////////////////////////////////////////////////////////////////////
+                        //MODE DEUX JOUEURS---------------------------------------------------////////////////////////////////////////////////////////////
+                        //DEPLACEMENT JOUEUR DEUX---------------------------------------------////////////////////////////////////////////////////////////
                         if (mode == 2)
                         {
                             do
                             {
-                                do
+                                do  // on repete jusqua ce que une des touches demander na pas ete appuyer
                                 {
-                                touche=getch();             // touche => touche qu'on appuye sans passer par enter
+                                touche=getch();         // touche => touche qu'on appuye sans passer par enter
                                 }
                                 while(touche != 'i' && touche != 'k' && touche != 'j' && touche != 'l' && touche != 27);
 
                                 switch(touche)
                                 {
-                                    case 'i':          // si touche => z
+                                    // touche HAUT
+                                    case 'i':          // si touche => i
                                     {
+                                        // on verifie s'il y a un obstacle
                                         y2--;
                                         i = collision(x2,y2,choix);
                                         y2++;
-                                        if(i == 0)
+                                        if(i == 0)  // si pas d'obstacle le personnage avance sinon ne fait rien
                                         {
                                             FixePosCurseur(x2,y2);    // on fait y - 1 a chaque fois qu'on appuye sur z
-                                            printf(" ");
+                                            printf(" ");    // on met un vide sur la case avant que le personnage n'avance
                                             y2--;
                                         }
-                                        break;
+                                        break;  // on sort de la boucle et on passe le tour
                                     }
-                                    case 'k':
+                                    // touche BAS
+                                    case 'k':           // si touche => k
                                     {
+                                        // on verifie s'il y a un obstacle
                                         y2++;
                                         i = collision(x2,y2,choix);
                                         y2--;
-                                        if(i == 0)
+                                        if(i == 0)  // si pas d'obstacle le personnage avance sinon ne fait rien
                                         {
                                             FixePosCurseur(x2,y2);    // on fait y + 1 a chaque fois qu'on appuye sur z
-                                            printf(" ");
+                                            printf(" ");    // on met un vide sur la case avant que le personnage n'avance
                                             y2++;
                                         }
-                                        break;
+                                        break;  // on sort de la boucle et on passe le tour
                                     }
-                                    case 'j':
+                                    // touche GAUCHE
+                                    case 'j':           // si touche => j
                                     {
+                                        // on verifie s'il y a un obstacle
                                         x2--;
                                         i = collision(x2,y2,choix);
                                         x2++;
-                                        if(i == 0)
+                                        if(i == 0)  // si pas d'obstacle le personnage avance sinon ne fait rien
                                         {
                                             FixePosCurseur(x2,y2);    // on fait x - 1 a chaque fois qu'on appuye sur z
-                                            printf(" ");
+                                            printf(" ");    // on met un vide sur la case avant que le personnage n'avance
                                             x2--;
                                         }
-                                        break;
+                                        break;  // on sort de la boucle et on passe le tour
                                     }
-                                    case 'l':
-                                        {
+                                    // touche DROITE
+                                    case 'l':           // si touche => l
+                                    {
+                                        // on verifie s'il y a un obstacle
                                         x2++;
                                         i = collision(x2,y2,choix);
                                         x2--;
-                                        if(i == 0)
+                                        if(i == 0)  // si pas d'obstacle le personnage avance sinon ne fait rien
                                         {
                                             FixePosCurseur(x2,y2);    // on fait x + 1 a chaque fois qu'on appuye sur z
-                                            printf(" ");
+                                            printf(" ");    // on met un vide sur la case avant que le personnage n'avance
                                             x2++;
                                         }
-                                        break;
+                                        break;  // on sort de la boucle et on passe le tour
                                     }
 
                                     case 27:
                                         break;     // si on appuye sur Esc on casse et quitte
                                 }
                             }
-                            while(i == 1);
+                            while(i == 1);  // repete tant que obstacle vrai
 
                             if(touche == 27)
                             break;     // si on appuye sur Esc on casse et quitte
 
+                            // si le joueur minotaure arrive sur la position du heros affiche GAME OVER avant de revenir au menu principal
                             if (x == x2 && y == y2)
                             {
                                 gameOver();
@@ -320,15 +338,15 @@ int main()
                                 break;
                             }
 
-
+                            // on re-affiche l'initial du personnage apres le deplacement si aucune des conditions anterieur etait vrai
                             Couleur(12,0);
                             FixePosCurseur(x2,y2);
                             printf("%c", minotaure);
                             Couleur(15,0);
                         }
 
-                        //MODE CONTRE IA------------------------------------------------------/////////////////////////////////////////////////////////////////////////
-                        //DEPLACEMENT IA------------------------------------------------------/////////////////////////////////////////////////////////////////////////
+                        //MODE CONTRE IA------------------------------------------------------////////////////////////////////////////////////////////////
+                        //DEPLACEMENT IA------------------------------------------------------////////////////////////////////////////////////////////////
                         if (mode == 3)
                         {
                             do
