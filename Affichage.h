@@ -122,12 +122,16 @@ void introHistoire();
 void afficheScore(int nombrePas);
 
 //=========================================================================//
-//         Fonction qui affiche le superbe et terrifiant minotaure         //
+//             Fonctions qui affiche des jolies images en ascii            //
 //=========================================================================//
 
 void afficheMino();
 
 void afficheMino2();
+
+void affichePrincesse();
+
+void afficheHPwin();
 
 void afficheHero();
 //=========================================================================//

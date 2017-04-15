@@ -13,11 +13,12 @@ int main()
     system("mode con lines=50 cols=100");     //Change la taille de la console
 
     // Declaration de divers variables qu'on utilisera dans le main
-    int choix,choix2,mode,nombrePas = 0;    // Variables pour les differend retour de choix ainsi que le nombre de pas initialiser a 0
-    int i,x,y,x2,y2,x3,y3;           // Les differentes coordonnees pour chaque personnage du jeu ainsi que un i pour la collision
-    char joueur[15] = "Thesee",minotaure = 'M',princesse[15] = "Arianne";       // Creation de tableau pour les noms des perso sauf le minotaure qui garde juste son initial
+    int choix, choix2, mode, nombrePas = 0;    // Variables pour les differend retour de choix ainsi que le nombre de pas initialiser a 0
+    int i, x, y, x2 ,y2, x3, y3;           // Les differentes coordonnees pour chaque personnage du jeu ainsi que un i pour la collision
+    char joueur[15] = "Thesee", minotaure = 'M', princesse[15] = "Arianne";       // Creation de tableau pour les noms des perso sauf le minotaure qui garde juste son initial
     char touche;        // On declare une variable touche pour les appel de clavier
     srand(time(NULL));      // On initialise la fonction rand
+
     afficheMino();          // On affiche un jolie minotaure
 
     while(1)
@@ -68,7 +69,7 @@ int main()
 
                 FixePosCurseur(11,1);       // on fixe le curseur sur la console
                 printf("|-- %s --|", joueur);       // et on affiche le nom du joueur(hero)
-                FixePosCurseur(72,1);       // on fixe le curseur sur la console
+                FixePosCurseur(74,1);       // on fixe le curseur sur la console
                 printf("|-- %s --|", princesse);    // et on affiche le nom de la princesse
 
                 FixePosCurseur(0,3);
@@ -335,7 +336,15 @@ int main()
                             break;     // si on appuye sur Esc on casse et quitte
 
                             // si le joueur minotaure arrive sur la position du heros affiche GAME OVER avant de revenir au menu principal
-                            if (x == x2 && y == y2)
+                            if (x2 == x && y2 == y)
+                            {
+                                gameOver();
+                                attendre(2);
+                                break;
+                            }
+
+                            // si le joueur minotaure arrive sur la position de la princesse affiche GAME OVER avant de revenir au menu principal
+                            if (x2 == x3 && y2 == y3)
                             {
                                 gameOver();
                                 attendre(2);
@@ -355,14 +364,14 @@ int main()
                         {
                             do
                             {
-                                if(y < y2)           // si touche => z
+                                if(y < y2)
                                 {
                                     y2--;
                                     i = collision(x2,y2,choix);
                                     y2++;
                                     if(i == 0)
                                     {
-                                        FixePosCurseur(x2,y2);    // on fait y - 1 a chaque fois qu'on appunye sur z
+                                        FixePosCurseur(x2,y2);
                                         printf(" ");
                                         y2--;
                                     }
@@ -374,7 +383,7 @@ int main()
                                     y2--;
                                     if(i == 0)
                                     {
-                                        FixePosCurseur(x2,y2);    // on fait y + 1 a chaque fois qu'on appuye sur z
+                                        FixePosCurseur(x2,y2);
                                         printf(" ");
                                         y2++;
                                     }
@@ -386,7 +395,7 @@ int main()
                                     x2++;
                                     if(i == 0)
                                     {
-                                        FixePosCurseur(x2,y2);    // on fait x - 1 a chaque fois qu'on appuye sur z
+                                        FixePosCurseur(x2,y2);
                                         printf(" ");
                                         x2--;
                                     }
@@ -398,7 +407,7 @@ int main()
                                     x2--;
                                     if(i == 0)
                                     {
-                                        FixePosCurseur(x2,y2);    // on fait x + 1 a chaque fois qu'on appuye sur z
+                                        FixePosCurseur(x2,y2);
                                         printf(" ");
                                         x2++;
                                     }
@@ -406,12 +415,22 @@ int main()
                             }
                             while (i == 1);
 
-                            if (x == x2 && y == y2)
+                            // si le joueur minotaure arrive sur la position du heros affiche GAME OVER avant de revenir au menu principal
+                            if (x2 == x && y2 == y)
                             {
                                 gameOver();
                                 attendre(2);
                                 break;
                             }
+
+                            // si le joueur minotaure arrive sur la position de la princesse affiche GAME OVER avant de revenir au menu principal
+                            if (x2 == x3 && y2 == y3)
+                            {
+                                gameOver();
+                                attendre(2);
+                                break;
+                            }
+
                             Couleur(12,0);
                             FixePosCurseur(x2,y2);
                             printf("%c", minotaure);

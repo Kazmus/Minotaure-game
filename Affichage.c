@@ -636,8 +636,7 @@ void gameOver()
 void win()
 {
     effaceEcran();
-    FixePosCurseur(30,22);
-    printf("Felicitations, vous avez sauve la princesse");
+    afficheHPwin();
 }
 
 //=========================================================================//
@@ -704,7 +703,7 @@ void afficheScore(int nombrePas)  // on prend en parametre le nombre de pas tota
     int score = 0;
 
     score = nombrePas;
-    FixePosCurseur(30,24);
+    FixePosCurseur(30,26);
     printf("Vous avez sauve la princesse en %d pas",score);
 }
 
@@ -814,6 +813,53 @@ void afficheHero()
     Couleur(15,0);
 }
 
+void affichePrincesse()
+{
+    Couleur(13,0);
+    FixePosCurseur(66,3);
+    puts("                 MMMI");
+    FixePosCurseur(66,4);
+    puts("                .HI:M");
+    FixePosCurseur(66,5);
+    puts("               IMM:.M");
+    FixePosCurseur(66,6);
+    puts("              MMIM:. .");
+    FixePosCurseur(66,7);
+    puts("             .I .IH:HII");
+    FixePosCurseur(66,8);
+    puts("               :.IHMMHM :I");
+    FixePosCurseur(66,9);
+    puts("               I. MMMMIM");
+    FixePosCurseur(66,10);
+    puts("             .I   MMH:");
+    FixePosCurseur(66,11);
+    puts("            ::  HIHM::");
+    FixePosCurseur(66,12);
+    puts("         .:H   MI:.::H");
+    FixePosCurseur(66,13);
+    puts("          .   .:..:::I");
+    FixePosCurseur(66,14);
+    puts("              ..:.HMM:");
+    FixePosCurseur(66,15);
+    puts("             ..:.:IHM.");
+    FixePosCurseur(66,16);
+    puts("           . .:..HIIM");
+    FixePosCurseur(66,17);
+    puts("         .  .:...I:I:");
+    FixePosCurseur(66,18);
+    puts("     I:..  :....IHHI.");
+    FixePosCurseur(66,19);
+    puts("     . . ::.  .::II:");
+    FixePosCurseur(66,20);
+    puts("     :HI...: .I:II::");
+    FixePosCurseur(66,21);
+    puts("      I..:.. .:H:.....");
+    FixePosCurseur(66,22);
+    puts("     ..:I:...I:  .I.:::...");
+    FixePosCurseur(66,23);
+    puts("      ...::IIIHHHHHI:....");
+    Couleur(15,0);
+}
 
 void afficheMino2()
 {
@@ -873,4 +919,55 @@ void afficheMino2()
     puts("      HA      :.:.:HIMMMM");
     FixePosCurseur(27,37);
     puts("        HA    MMMMMMMMMM");
+}
+
+void afficheHPwin()
+{
+    effaceEcran();
+    FixePosCurseur(27,2);
+    puts("          HIHI::::");
+    FixePosCurseur(27,3);
+    puts("      IIIIH::::II::        II");
+    FixePosCurseur(27,4);
+    puts("     IIIH::I::...I:::     IIIII");
+    FixePosCurseur(27,5);
+    puts("    IIIII::II.:I:.:I .  HIIHIIIII");
+    FixePosCurseur(27,6);
+    puts("    III..I::::.:M.I:   MII:IIIIIII.");
+    FixePosCurseur(27,7);
+    puts("    IIII:::I:...I..:. :..HIIHIHIIII");
+    FixePosCurseur(27,8);
+    puts("    IIII:I::I:.....    .M..IIHIIIIHH");
+    FixePosCurseur(27,9);
+    puts("   .IIIHII.I:.....    ..:..I.:. HII:");
+    FixePosCurseur(27,10);
+    puts("   HIIHMH:..:::..:    .....IH.:HIIII");
+    FixePosCurseur(27,11);
+    puts("   HIIII:.....:..     I....I:IHIIIIH");
+    FixePosCurseur(27,12);
+    puts(" IIIIIIH ..:.:.:       ..::I...IIIII");
+    FixePosCurseur(27,13);
+    puts("IIIIIH. IHHHHI.I        II:....:IIII:");
+    FixePosCurseur(27,14);
+    puts("IIII    IIIIIIIHH       I I ....:IHII:");
+    FixePosCurseur(27,15);
+    puts("I      HIIIIIIIHIH      H . .::II.MIIII");
+    FixePosCurseur(27,16);
+    puts("...    IIIIIIIIIIII     . I.I:::II:MIIHI");
+    FixePosCurseur(27,17);
+    puts("  .....IIIIIIIIIIIM     M H.::::II: HIIIII");
+    FixePosCurseur(27,18);
+    puts("...   .IIHIIIIHIIII     . IHHHIIIII: HHHHII");
+    FixePosCurseur(27,19);
+    puts(" ......IIIMIIIIHIHIH    MI.IH:::::H: .HHHIII.");
+    FixePosCurseur(27,20);
+    puts(" ..   ..IIIMIIIIMHIHH   ::I::::HH::.  IHMHHIHII");
+    FixePosCurseur(27,21);
+    puts("     ..  IIIIIHMIHHHI...I::.:H:::IH.    :MMMHIHH");
+    FixePosCurseur(27,22);
+    puts("         IIIMM:..:.I.  .:I:HHIMMMIII           HMH");
+    FixePosCurseur(27,23);
+    puts("          HIIII....H.I..  I:I:I..  I             HI");
+    FixePosCurseur(27,24);
+    puts("           IIIHH...... ....::II.  .II.             .");
 }
