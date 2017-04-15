@@ -63,17 +63,30 @@ int main()
                 choix = selection();             // on efface l'ecran
                 effaceEcran();
                 affichelaby(choix);             // affichage labyrinthe
+
                 FixePosCurseur(15,0);
                 printf("%s", joueur);
                 FixePosCurseur(76,0);
                 printf("%s", princesse);
+
                 Couleur(14,0);
-                FixePosCurseur(23,25);        // on fixe le curseur tout en haut a gauche de la console
+                FixePosCurseur(41,24);
+                puts("---Commandes hero---");
+                FixePosCurseur(23,25);
                 puts("Utilisez les touches (z) pour monter, (s) pour descendre");
                 FixePosCurseur(26,26);
                 puts("(q) pour aller à gauche, (d) pour aller à droite");
-                FixePosCurseur(32,27);
+                FixePosCurseur(32,28);
                 puts("(Esc) pour revenir au menu principal");
+                if (mode == 2)
+                {
+                    FixePosCurseur(38,30);
+                    puts("---Commandes minotaure---");
+                    FixePosCurseur(23,31);
+                    puts("Utilisez les touches (i) pour monter, (k) pour descendre");
+                    FixePosCurseur(26,32);
+                    puts("(j) pour aller à gauche, (l) pour aller à droite");
+                }
 
                 do
                 {

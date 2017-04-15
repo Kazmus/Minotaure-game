@@ -29,11 +29,11 @@ int choixMenu()
     FixePosCurseur(36,20);
     puts("============================");
     FixePosCurseur(36,21);
-    puts("|   (I) INTRODUCTION       |");
+    puts("|   (i) INTRODUCTION       |");
     FixePosCurseur(36,22);
-    puts("|   (N) NOUVELLE PARTIE    |");
+    puts("|   (n) NOUVELLE PARTIE    |");
     FixePosCurseur(36,23);
-    puts("|   (O) OPTIONS            |");
+    puts("|   (o) OPTIONS            |");
     FixePosCurseur(36,24);
     puts("|   (Esc) QUITTER LE JEU   |");
     FixePosCurseur(36,25);
@@ -69,9 +69,9 @@ int choixOptions()
     FixePosCurseur(29,20);
     puts("==========================================");
     FixePosCurseur(29,21);
-    puts("|  (H)   Changer le nom du heros         |");
+    puts("|  (h)   Changer le nom du heros         |");
     FixePosCurseur(29,22);
-    puts("|  (P)   Changer le nom de la princesse  |");
+    puts("|  (p)   Changer le nom de la princesse  |");
     FixePosCurseur(29,23);
     puts("|  (Esc) Revenir au menu principal       |");
     FixePosCurseur(29,24);
@@ -108,7 +108,7 @@ int choixMode()
     FixePosCurseur(33,23);
     puts("Veuillez choisir un mode de jeu");
     FixePosCurseur(32,24);
-    puts("deplacer les modes avec (q) et (d)");
+    puts("Defiler les modes avec (q) et (d)");
     FixePosCurseur(33,25);
     puts("(espace) pour valider le choix");
     Couleur(15,0);
@@ -152,7 +152,7 @@ int choixMode()
                 FixePosCurseur(33,23);
                 puts("Veuillez choisir un mode de jeu");
                 FixePosCurseur(32,24);
-                puts("deplacer les modes avec (q) et (d)");
+                puts("Defiler les modes avec (q) et (d)");
                 FixePosCurseur(33,25);
                 puts("(espace) pour valider le choix");
                 Couleur(15,0);
@@ -169,7 +169,7 @@ int choixMode()
                 FixePosCurseur(33,23);
                 puts("Veuillez choisir un mode de jeu");
                 FixePosCurseur(32,24);
-                puts("deplacer les modes avec (q) et (d)");
+                puts("Defiler les modes avec (q) et (d)");
                 FixePosCurseur(33,25);
                 puts("(espace) pour valider le choix");
                 Couleur(15,0);

@@ -106,8 +106,8 @@ int selection()
     Couleur(14,0);
     FixePosCurseur(35,25);
     puts("Veuillez choisir un labyrinthe");
-    FixePosCurseur(32,26);
-    puts("Deplacer les labyrinthes avec Q et D");
+    FixePosCurseur(31,26);
+    puts("Defiler les labyrinthes avec (q) et (d)");
     FixePosCurseur(36,27);
     puts("ESPACE pour valider le choix");
     Couleur(15,0);
@@ -278,8 +278,8 @@ int selection()
                 Couleur(14,0);
                 FixePosCurseur(35,25);
                 puts("Veuillez choisir un labyrinthe");
-                FixePosCurseur(32,26);
-                puts("Deplacer les labyrinthes avec Q et D");
+                FixePosCurseur(31,26);
+                puts("Defiler les labyrinthes avec (q) et (d)");
                 FixePosCurseur(36,27);
                 puts("ESPACE pour valider le choix");
                 FixePosCurseur(0,0);
@@ -296,8 +296,8 @@ int selection()
                 Couleur(14,0);
                 FixePosCurseur(35,25);
                 puts("Veuillez choisir un labyrinthe");
-                FixePosCurseur(32,26);
-                puts("Deplacer les labyrinthes avec Q et D");
+                FixePosCurseur(31,26);
+                puts("Defiler les labyrinthes avec (q) et (d)");
                 FixePosCurseur(36,27);
                 puts("ESPACE pour valider le choix");
                 FixePosCurseur(0,0);
@@ -570,7 +570,7 @@ void introHistoire()
 {
     char touche;
 
-    FixePosCurseur(25,19);
+    FixePosCurseur(27,19);
     printf("Il y avait fort longtemps, dans un pays lointain,");
     attendre(2);
     FixePosCurseur(39,20);
@@ -603,8 +603,11 @@ void introHistoire()
     FixePosCurseur(20,29);
     printf("Mais prend garde jeune heros sa demeure est un vrai labyrinthe");
     attendre(2);
+
+    Couleur(14,0);
     FixePosCurseur(19,31);
     printf("Veuillez appuyez sur la touche ESC pour revenir au menu principal");
+    Couleur(15,0);
 
     while (touche != 27)
     {
